@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('russian_steel_site.home.home');
 });
+
+
+
