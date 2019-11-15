@@ -1,4 +1,4 @@
-@extends('russian_steel_site.layouts.main')
+@extends('website.layouts.main')
   
   @section('content')
     <div class="slide-one-item home-slider owl-carousel">

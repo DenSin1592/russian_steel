@@ -18,22 +18,22 @@
 
 
 Route::get('/', function () {
-    return view('russian_steel_site.home.home');
+    return view('website.home.home');
 })->name('site/home');
 
 Route::get('/about', function () {
-    return view('russian_steel_site.about.about');
+    return view('website.about.about');
 })->name('site/about');
 
 Route::get('/contacts', function () {
-    return view('russian_steel_site.contacts.contact');
+    return view('website.contacts.contact');
 })->name('site/contacts');
 
 Route::get('/price', function () {
-    return view('russian_steel_site.home.home');
+    return view('website.home.home');
 })->name('site/prise');
 
 //Route::get('/news', function () {
-//    return view('russian_steel_site.home.home');
+//    return view('website.home.home');
 //})->name('site/news');
 
