@@ -22,11 +22,11 @@
                         <div class="d-flex ml-auto">
                             <a href="#" class="d-flex align-items-center ml-auto mr-4">
                                 <span class="icon-phone mr-2"></span>
-                                <span class="d-none d-md-inline-block">русскаясталь@example.com</span>
+                                <span class="d-none d-md-inline-block">russiansteelrussia@example.com</span>
                             </a>
                             <a href="#" class="d-flex align-items-center">
                                 <span class="icon-envelope mr-2"></span>
-                                <span class="d-none d-md-inline-block">+7 999 999 99 99</span>
+                                <span class="d-none d-md-inline-block">+7 999 99 99</span>
                             </a>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
             <div class="container py-1">
                 <div class="row align-items-center">
                     <div class="col-2">
-                        <h2 class="mb-0 site-logo"><a href="/">Русская Сталь</a></h2>
+                        <h2 class="mb-0 site-logo"><a href={{route('site/home')}}>Русская Сталь</a></h2>
                     </div>
                     <div class="col-10">
                         <nav class="site-navigation text-right" role="navigation">
