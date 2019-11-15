@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="site-blocks-cover inner-page" style="background-image: url(images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="site-blocks-cover inner-page" style="background-image: url(/images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-7">
@@ -103,7 +103,7 @@
     <div class="site-section site-block-3 bg-light">
       <div class="container">
         <div class="row align-items-stretch">
-          <div class="col-lg-6 mb-5 mb-lg-0 bg-image bg-md-height" style="background-image: url('images/img_1_colored.jpg')"></div>
+          <div class="col-lg-6 mb-5 mb-lg-0 bg-image bg-md-height" style="background-image: url('/images/img_1_colored.jpg')"></div>
           <div class="col-lg-6 h-100">
             <div class="row row-items">
               <div class="col-md-6 mb-5 mb-md-0">

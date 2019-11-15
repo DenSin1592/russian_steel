@@ -3,7 +3,7 @@
 @section('content')
   <div class="slide-one-item home-slider owl-carousel">
 
-    <div class="site-blocks-cover overlay" style="background-image: url(images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="site-blocks-cover overlay" style="background-image: url(/images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
           <div class="col-md-10">
@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <div class="site-blocks-cover overlay" style="background-image: url(images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="site-blocks-cover overlay" style="background-image: url(/images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
           <div class="col-md-10">
@@ -82,7 +82,7 @@
       <div class="row no-gutters align-items-stretch h-100">
         <div class="col-lg-6">
           <div class="row no-gutters align-items-stretch h-100 half-sm">
-            <div class="col-md-6 bg-image bg-sm-height" style="background-image: url('images/img_4_colored.jpg');" data-aos="fade" data-aos-delay="0"></div>
+            <div class="col-md-6 bg-image bg-sm-height" style="background-image: url('/images/img_4_colored.jpg');" data-aos="fade" data-aos-delay="0"></div>
             <div class="col-md-6 bg-light text">
               <div class="p-4">
                 <h2 class="h5 mb-3 text-black line-height-sm">Automative Manufacturing</h2>
@@ -94,7 +94,7 @@
         </div>
         <div class="col-lg-6">
           <div class="row no-gutters align-items-stretch h-100 half-sm">
-            <div class="col-md-6 bg-image order-md-2 order-lg-1 bg-sm-height" style="background-image: url('images/img_1_colored.jpg');" data-aos="fade" data-aos-delay="200"></div>
+            <div class="col-md-6 bg-image order-md-2 order-lg-1 bg-sm-height" style="background-image: url('/images/img_1_colored.jpg');" data-aos="fade" data-aos-delay="200"></div>
             <div class="col-md-6 bg-light text order-md-1 order-lg-2">
               <div class="p-4">
                 <h2 class="h5 mb-3 text-black line-height-sm">Mechanical Engineering</h2>
@@ -107,7 +107,7 @@
 
         <div class="col-lg-6">
           <div class="row no-gutters align-items-stretch h-100 half-sm">
-            <div class="col-md-6 bg-image order-md-1 order-lg-2 bg-sm-height" style="background-image: url('images/img_2_colored.jpg');" data-aos="fade" data-aos-delay="300"></div>
+            <div class="col-md-6 bg-image order-md-1 order-lg-2 bg-sm-height" style="background-image: url('/images/img_2_colored.jpg');" data-aos="fade" data-aos-delay="300"></div>
             <div class="col-md-6 bg-light text order-md-2 order-lg-1">
               <div class="p-4">
                 <h2 class="h5 mb-3 text-black line-height-sm">Oil &amp; Gas Energy</h2>
@@ -119,7 +119,7 @@
         </div>
         <div class="col-lg-6">
           <div class="row no-gutters align-items-stretch h-100 half-sm">
-            <div class="col-md-6 bg-image order-md-2 bg-sm-height" style="background-image: url('images/img_3_colored.jpg');" data-aos="fade" data-aos-delay="400"></div>
+            <div class="col-md-6 bg-image order-md-2 bg-sm-height" style="background-image: url('/images/img_3_colored.jpg');" data-aos="fade" data-aos-delay="400"></div>
             <div class="col-md-6 bg-light text order-md-1">
               <div class="p-4">
                 <h2 class="h5 mb-3 text-black line-height-sm">Industrial Construction</h2>
@@ -138,7 +138,7 @@
   <div class="site-section">
     <div class="container">
       <div class="row">
-        <div class="col-md-6 bg-image bg-sm-height mb-5 mb-md-0 order-md-2" style="background-image: url('images/img_1_colored.jpg');" data-aos="fade-up"></div>
+        <div class="col-md-6 bg-image bg-sm-height mb-5 mb-md-0 order-md-2" style="background-image: url('/images/img_1_colored.jpg');" data-aos="fade-up"></div>
         <div class="col-md-6 pr-md-5 order-md-1">
           <h2 class="display-3 line-height-xs text-black mb-4">Let's grow <strong>together</strong></h2>
           <p class="mb-4">Magnam iure fugit recusandae nobis a amet, officiis laboriosam repudiandae? Quis nostrum numquam ducimus quo ab laboriosam qui expedita, cupiditate ex, sed dignissimos facere provident dolores, eius distinctio quas aliquid.</p>
@@ -161,7 +161,7 @@
         <div class="p-4">
           <div class="block-47 d-flex">
             <div class="block-47-image d-none d-sm-block">
-              <img src="images/person_1.jpg" alt="Image placeholder" class="img-fluid">
+              <img src="/images/person_1.jpg" alt="Image placeholder" class="img-fluid">
             </div>
             <blockquote class="block-47-quote">
               <p>&ldquo;Magnam iure fugit recusandae nobis a amet, officiis laboriosam repudiandae? Quis nostrum numquam ducimus quo ab laboriosam qui expedita, cupiditate ex, sed dignissimos facere provident dolores, eius distinctio quas aliquid.&rdquo;</p>
@@ -173,7 +173,7 @@
         <div class="p-4">
           <div class="block-47 d-flex">
             <div class="block-47-image d-none d-sm-block">
-              <img src="images/person_2.jpg" alt="Image placeholder" class="img-fluid">
+              <img src="/images/person_2.jpg" alt="Image placeholder" class="img-fluid">
             </div>
             <blockquote class="block-47-quote">
               <p>&ldquo;Magnam iure fugit recusandae nobis a amet, officiis laboriosam repudiandae? Quis nostrum numquam ducimus quo ab laboriosam qui expedita, cupiditate ex, sed dignissimos facere provident dolores, eius distinctio quas aliquid.&rdquo;</p>
@@ -185,7 +185,7 @@
         <div class="p-4">
           <div class="block-47 d-flex">
             <div class="block-47-image d-none d-sm-block">
-              <img src="images/person_3.jpg" alt="Image placeholder" class="img-fluid">
+              <img src="/images/person_3.jpg" alt="Image placeholder" class="img-fluid">
             </div>
             <blockquote class="block-47-quote">
               <p>&ldquo;Magnam iure fugit recusandae nobis a amet, officiis laboriosam repudiandae? Quis nostrum numquam ducimus quo ab laboriosam qui expedita, cupiditate ex, sed dignissimos facere provident dolores, eius distinctio quas aliquid.&rdquo;</p>
@@ -197,7 +197,7 @@
         <div class="p-4">
           <div class="block-47 d-flex">
             <div class="block-47-image d-none d-sm-block">
-              <img src="images/person_4.jpg" alt="Image placeholder" class="img-fluid">
+              <img src="/images/person_4.jpg" alt="Image placeholder" class="img-fluid">
             </div>
             <blockquote class="block-47-quote">
               <p>&ldquo;Magnam iure fugit recusandae nobis a amet, officiis laboriosam repudiandae? Quis nostrum numquam ducimus quo ab laboriosam qui expedita, cupiditate ex, sed dignissimos facere provident dolores, eius distinctio quas aliquid.&rdquo;</p>
@@ -214,7 +214,7 @@
   </div>
 
   <div class="site-block-half d-block d-lg-flex site-block-video" data-aos="fade">
-    <div class="image bg-image order-2" style="background-image: url(images/hero_bg_1.jpg); ">
+    <div class="image bg-image order-2" style="background-image: url(/images/hero_bg_1.jpg); ">
       <a href="https://vimeo.com/channels/staffpicks/93951774" class="play-button popup-vimeo"><span class="icon-play"></span></a>
     </div>
     <div class="text order-1">

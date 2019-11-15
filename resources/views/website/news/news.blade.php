@@ -3,7 +3,7 @@
 @section('content')
 
 
-    <div class="site-blocks-cover inner-page overlay" style="background-image: url(images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="site-blocks-cover inner-page overlay" style="background-image: url(/images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-7 text-center">
@@ -19,7 +19,7 @@
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="post-entry bg-white">
               <div class="image">
-                <img src="images/img_1.jpg" alt="Image" class="img-fluid">
+                <img src="/images/img_1.jpg" alt="Image" class="img-fluid">
               </div>
               <div class="text p-4">
                 <h2 class="h5 text-black"><a href="#">Lorem ipsum dolor sit amet</a></h2>
@@ -32,7 +32,7 @@
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="post-entry bg-white">
               <div class="image">
-                <img src="images/img_2.jpg" alt="Image" class="img-fluid">
+                <img src="/images/img_2.jpg" alt="Image" class="img-fluid">
               </div>
               <div class="text p-4">
                 <h2 class="h5 text-black"><a href="#">Lorem ipsum dolor sit amet</a></h2>
@@ -45,7 +45,7 @@
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="post-entry bg-white">
               <div class="image">
-                <img src="images/img_3.jpg" alt="Image" class="img-fluid">
+                <img src="/images/img_3.jpg" alt="Image" class="img-fluid">
               </div>
               <div class="text p-4">
                 <h2 class="h5 text-black"><a href="#">Lorem ipsum dolor sit amet</a></h2>
@@ -58,7 +58,7 @@
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="post-entry bg-white">
               <div class="image">
-                <img src="images/img_4.jpg" alt="Image" class="img-fluid">
+                <img src="/images/img_4.jpg" alt="Image" class="img-fluid">
               </div>
               <div class="text p-4">
                 <h2 class="h5 text-black"><a href="#">Lorem ipsum dolor sit amet</a></h2>
@@ -71,7 +71,7 @@
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="post-entry bg-white">
               <div class="image">
-                <img src="images/img_1.jpg" alt="Image" class="img-fluid">
+                <img src="/images/img_1.jpg" alt="Image" class="img-fluid">
               </div>
               <div class="text p-4">
                 <h2 class="h5 text-black"><a href="#">Lorem ipsum dolor sit amet</a></h2>
@@ -84,7 +84,7 @@
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="post-entry bg-white">
               <div class="image">
-                <img src="images/img_2.jpg" alt="Image" class="img-fluid">
+                <img src="/images/img_2.jpg" alt="Image" class="img-fluid">
               </div>
               <div class="text p-4">
                 <h2 class="h5 text-black"><a href="#">Lorem ipsum dolor sit amet</a></h2>
@@ -97,7 +97,7 @@
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="post-entry bg-white">
               <div class="image">
-                <img src="images/img_3.jpg" alt="Image" class="img-fluid">
+                <img src="/images/img_3.jpg" alt="Image" class="img-fluid">
               </div>
               <div class="text p-4">
                 <h2 class="h5 text-black"><a href="#">Lorem ipsum dolor sit amet</a></h2>
@@ -110,7 +110,7 @@
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="post-entry bg-white">
               <div class="image">
-                <img src="images/img_4.jpg" alt="Image" class="img-fluid">
+                <img src="/images/img_4.jpg" alt="Image" class="img-fluid">
               </div>
               <div class="text p-4">
                 <h2 class="h5 text-black"><a href="#">Lorem ipsum dolor sit amet</a></h2>
@@ -123,7 +123,7 @@
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="post-entry bg-white">
               <div class="image">
-                <img src="images/img_1.jpg" alt="Image" class="img-fluid">
+                <img src="/images/img_1.jpg" alt="Image" class="img-fluid">
               </div>
               <div class="text p-4">
                 <h2 class="h5 text-black"><a href="#">Lorem ipsum dolor sit amet</a></h2>

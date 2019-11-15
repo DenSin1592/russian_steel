@@ -10,7 +10,7 @@
                         <ul class="list-unstyled">
                             <li><a href={{route('site/home')}}>Home</a></li>
                             <li><a href={{route('site/about')}}>Services</a></li>
-                            <li><a href={{route('site/price')}}>Price</a></li>
+                            <li><a href={{route('site/production')}}>Production</a></li>
                             <li><a href={{route('site/contacts')}}>Contacts</a></li>
                             {{--<li><a href="#">Contacts</a></li>
                             <li><a href="#">Sustainability</a></li>
@@ -43,7 +43,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-5">
+            <div class="col-lg-5" id="adress">
                 <hr/>
                 <div class="row mb-5">
                     <div class="col-md-12"><h3 class="footer-heading mb-4">Europe</h3></div>

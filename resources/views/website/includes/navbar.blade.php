@@ -22,11 +22,11 @@
                         <div class="d-flex ml-auto">
                             <a href="#" class="d-flex align-items-center ml-auto mr-4">
                                 <span class="icon-phone mr-2"></span>
-                                <span class="d-none d-md-inline-block">russiansteelrussia@example.com</span>
+                                <span class="d-none d-md-inline-block">+7 999 99 99</span>
                             </a>
                             <a href="#" class="d-flex align-items-center">
                                 <span class="icon-envelope mr-2"></span>
-                                <span class="d-none d-md-inline-block">+7 999 99 99</span>
+                                <span class="d-none d-md-inline-block">russiansteelrussia@example.com</span>
                             </a>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                                     <li><a href={{route('site/home')}}>Home</a></li>
                                     {{--<li><a href={{route('site/news')}}>News</a></li>--}}
                                     <li><a href={{route('site/about')}}>Services</a></li>
-                                    <li><a href={{route('site/price')}}>Price</a></li>
+                                    <li><a href={{route('site/production')}}>Production</a></li>
                                     <li><a href={{route('site/contacts')}}>Contact</a></li>
                                 </ul>
                             </div>
