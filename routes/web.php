@@ -15,25 +15,11 @@
     return view('russian_steel_site.home.home');
 });*/
 
-
-
-Route::get('/', function () {
-    return view('website.home.home');
-})->name('site/home');
-
-Route::get('/about', function () {
-    return view('website.about.about');
-})->name('site/about');
-
-Route::get('/contacts', function () {
-    return view('website.contacts.contact');
-})->name('site/contacts');
-
-Route::get('/price', function () {
-    return view('website.home.home');
-})->name('site/prise');
-
-//Route::get('/news', function () {
-//    return view('website.home.home');
-//})->name('site/news');
+Route::group(['namespace' => "Site"], function (){
+    Route::get('/', 'PageController@show_home_page')->name('site/home');
+    Route::get('/about', 'PageController@show_about_page')->name('site/about');
+    Route::get('/contacts', 'PageController@show_contacts_page')->name('site/contacts');
+    Route::get('/price', 'PageController@show_price_page')->name('site/price');
+//    Route::get('/news', 'PageController@show_news_page')->name('site/news');
+});
 

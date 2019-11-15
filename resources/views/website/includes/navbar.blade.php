@@ -73,7 +73,7 @@
                                     <li><a href={{route('site/home')}}>Home</a></li>
                                     {{--<li><a href={{route('site/news')}}>News</a></li>--}}
                                     <li><a href={{route('site/about')}}>Services</a></li>
-                                    <li><a href={{route('site/prise')}}>Price</a></li>
+                                    <li><a href={{route('site/price')}}>Price</a></li>
                                     <li><a href={{route('site/contacts')}}>Contact</a></li>
                                 </ul>
                             </div>
