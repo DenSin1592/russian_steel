@@ -70,11 +70,11 @@
                                         <li><a href="#">Menu Three</a></li>
                                       </ul>
                                     </li>--}}
-                                    <li><a href="/">Home</a></li>
-                                    {{--<li><a href="news.html">News</a></li>--}}
-                                    <li><a href="#">Services</a></li>
-                                    <li><a href="#">Price</a></li>
-                                    <li><a href="#">Contact</a></li>
+                                    <li><a href={{route('site/home')}}>Home</a></li>
+                                    {{--<li><a href={{route('site/news')}}>News</a></li>--}}
+                                    <li><a href={{route('site/about')}}>Services</a></li>
+                                    <li><a href={{route('site/prise')}}>Price</a></li>
+                                    <li><a href={{route('site/contacts')}}>Contact</a></li>
                                 </ul>
                             </div>
                         </nav>
