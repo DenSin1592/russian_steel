@@ -24,9 +24,9 @@ class PageController extends Controller
         return view('website.contacts.contact');
     }
 
-    public function show_price_page()
+    public function show_production_page()
     {
-        return view('website.price.price');
+        return view('website.production.production');
     }
 
     /*public function show_news_page()

@@ -19,7 +19,7 @@ Route::group(['namespace' => "Site"], function (){
     Route::get('/', 'PageController@show_home_page')->name('site/home');
     Route::get('/about', 'PageController@show_about_page')->name('site/about');
     Route::get('/contacts', 'PageController@show_contacts_page')->name('site/contacts');
-    Route::get('/price', 'PageController@show_price_page')->name('site/price');
+    Route::get('/production', 'PageController@show_production_page')->name('site/production');
 //    Route::get('/news', 'PageController@show_news_page')->name('site/news');
 });
 
