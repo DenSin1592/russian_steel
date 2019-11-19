@@ -6,7 +6,7 @@
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-7 text-center">
-            <h1 class="mb-5">Get <strong>In Touch</strong></h1>
+            <h1 class="mb-5">Свяжитесь <strong>С Нами</strong></h1>
           </div>
         </div>
       </div>
@@ -20,7 +20,7 @@
           
             
           
-            <form action="#" class="p-5 bg-white">
+            {{--<form action="#" class="p-5 bg-white">
 
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
@@ -35,11 +35,11 @@
                 </div>
               </div>
 
-              
+
 
               <div class="row form-group">
                 <div class="col-md-12">
-                  <label class="font-weight-bold" for="message">Message</label> 
+                  <label class="font-weight-bold" for="message">Message</label>
                   <textarea name="message" id="message" cols="30" rows="5" class="form-control" placeholder="Say hello to us"></textarea>
                 </div>
               </div>
@@ -50,28 +50,28 @@
                 </div>
               </div>
 
-  
-            </form>
+
+            </form>--}}
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-lg-4" id="contacts/adress">
             <div class="p-4 mb-3 bg-white">
-              <h3 class="h5 text-black mb-3">Contact Info</h3>
-              <p class="mb-0 font-weight-bold">Address</p>
-              <p class="mb-4">203 Fake St. Mountain View, San Francisco, California, USA</p>
+              <h3 class="h5 text-black mb-3">Контакты</h3>
+              <p class="mb-0 font-weight-bold">Адрес</p>
+              <p class="mb-4">РФ, Рязанская обл., пос. Шумашь. ул Центральная, д. 111</p>
 
-              <p class="mb-0 font-weight-bold">Phone</p>
-              <p class="mb-4"><a href="#">+1 232 3235 324</a></p>
+              <p class="mb-0 font-weight-bold">Телефон</p>
+              <p class="mb-4"><a href="#">+7 999 999 9999</a></p>
 
-              <p class="mb-0 font-weight-bold">Email Address</p>
-              <p class="mb-0"><a href="#">youremail@domain.com</a></p>
+              <p class="mb-0 font-weight-bold">Email</p>
+              <p class="mb-0"><a href="#">russiansteelrussia@example.com </a></p>
 
             </div>
             
             <div class="p-4 mb-3 bg-white">
-              <h3 class="h5 text-black mb-3">More Info</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ad iure porro mollitia architecto hic consequuntur. Distinctio nisi perferendis dolore, ipsa consectetur? Fugiat quaerat eos qui, libero neque sed nulla.</p>
-              <p><a href="#" class="btn btn-primary px-4 py-2 text-white">Learn More</a></p>
+              <h3 class="h5 text-black mb-3">ООО "Руская Сталь"</h3>
+              <p>Мы стремимся к качеству, к удовлетворинию любых потребностей наших Клиентов. У нас богатый опыт в ведении бизнеса и, конкретно, в металлургии.</p>
+              <p><a href={{route('site/home')}} class="btn btn-primary px-4 py-2 text-white">Узнать больше</a></p>
             </div>
           </div>
         </div>
@@ -81,7 +81,7 @@
     
     <div class="promo py-5 bg-primary" data-aos="fade">
       <div class="container text-center">
-        <h2 class="d-block mb-0 font-weight-light text-white"><a href="#" class="text-white d-block">Visit Our Office</a></h2>
+        <h2 class="d-block mb-0 font-weight-light text-white"><a href="#contacts/adress" class="text-white d-block">Посетите наш Офис</a></h2>
       </div>
     </div>
 
