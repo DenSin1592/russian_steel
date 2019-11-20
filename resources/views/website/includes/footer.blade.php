@@ -48,7 +48,7 @@
                 <div class="row mb-5">
                     <div class="col-md-12"><h3 class="footer-heading mb-4">Europe</h3></div>
                     <div class="col-md-6">
-                        <p>Czech <br> Koněvova 155/12,<br/> Praha 3</p>
+                        <p>Koněvova 155/12, <br> Praha 3 <br/> Czech</p>
                     </div>
                     <div class="col-md-6">
                         Tel. + (999) 9999-9999-9999 <br>
@@ -59,7 +59,7 @@
                 <div class="row">
                     <div class="col-md-12"><h3 class="footer-heading mb-4">Russia</h3></div>
                     <div class="col-md-6">
-                        <p>Ryazan' <br> 111 Central Street,<br/> Village Shumash</p>
+                        <p>111 Central Street, <br> Village Shumash <br/> Ryazan'</p>
                     </div>
                     <div class="col-md-6">
                         Tel. + (999) 999-9999 <br>

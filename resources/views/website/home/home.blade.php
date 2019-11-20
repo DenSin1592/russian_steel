@@ -58,7 +58,7 @@
             <div class="d-flex align-items-center">
               <div class="mr-3"><span class="flaticon-worker display-3 text-primary"></span></div>
               <div class="">
-                <h2 class="text-black">100+</h2> <strong class="text-black">Высокоспециализированных</strong> Инженеров
+                <h2 class="text-black">100+</h2> <strong class="text-black">Высококвалифицированных</strong> Инженеров
               </div>
             </div>
           </div>
