@@ -14,9 +14,9 @@ class PageController extends Controller
         return view('website.home.home');
     }
 
-    public function show_about_page()
+    public function show_services_page()
     {
-        return view('website.about.about');
+        return view('website.services.services');
     }
 
     public function show_contacts_page()
