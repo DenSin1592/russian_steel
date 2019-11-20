@@ -74,6 +74,16 @@
                                     {{--<li><a href={{route('site/news')}}>News</a></li>--}}
                                     <li><a href={{route('site/about')}}>Services</a></li>
                                     <li><a href={{route('site/production')}}>Production</a></li>
+                                    {{--<li class="has-children">
+                                        <a href={{route('site/production')}}>Production</a>
+                                        <ul class="dropdown arrow-top">
+                                            <li><a href="/website/production/production_categorie.blade.php">Категория1</a></li>
+                                            <li><a href="#">Категория2</a></li>
+                                            <li><a href="#">Категория3</a></li>
+                                        </ul>
+                                    </li>--}}
+
+
                                     <li><a href={{route('site/contacts')}}>Contact</a></li>
                                 </ul>
                             </div>
