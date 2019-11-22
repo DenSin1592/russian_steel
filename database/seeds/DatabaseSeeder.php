@@ -12,5 +12,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+        $this->call(PricelistImagesTableSeeder::class);
+        $this->call(PricelistCategoryTableSeeder::class);
+        factory(\App\Models\PriceProductModel::class, 50)->create();
     }
 }

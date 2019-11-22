@@ -23,7 +23,7 @@ class CreatePricelistCategoriesTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            //$table->foreign('image')->references('id')->on('pricelist_images');
+            $table->foreign('image_id')->references('id')->on('pricelist_images');
         });
     }
 

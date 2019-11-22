@@ -20,6 +20,7 @@ class CreatePricelistProductsTable extends Migration
             $table->string('title')->unique();
             $table->string('slug')->unique();
             $table->float('price');
+            $table->text('excerpt')->nullable();
             $table->text('content_row');
             $table->text('content_html');
             $table->boolean('is_added')->default(false);
@@ -27,9 +28,9 @@ class CreatePricelistProductsTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            //$table->foreign('category_id')->references('id')->on('pricelist_categories');
-            //$table->foreign('image')->references('id')->on('pricelist_images');
-            //$table->index('is_added');
+            $table->foreign('category_id')->references('id')->on('pricelist_categories');
+            $table->foreign('image_id')->references('id')->on('pricelist_images');
+            $table->index('is_added');
         });
     }
 
