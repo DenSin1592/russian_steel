@@ -18,6 +18,8 @@ class CreatePricelistImagesTable extends Migration
             $table->string('title')->unique();
             $table->string('path');
             $table->timestamps();
+
+
         });
     }
 
