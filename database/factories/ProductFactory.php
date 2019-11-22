@@ -17,7 +17,7 @@ $factory->define(\App\Models\PriceProductModel::class, function (Faker $faker) {
     $text_size = rand(100, 1000);
     $title = $faker->sentence($title_size);
     $text = $faker->text($text_size);
-    $excerpt = substr($text, 0 ,20);
+    $excerpt = substr($text, 0 ,100);
     $price = 1.11 + (rand(100,1000));
     $is_added = rand(1,5)>1;
     return [

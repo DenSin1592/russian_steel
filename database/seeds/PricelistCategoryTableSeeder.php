@@ -19,7 +19,8 @@ class PricelistCategoryTableSeeder extends Seeder
         $categories[] = [
             'title' => $cat_title,
             'slug' => Str::slug($cat_title) ,
-            'parent_id' => 0
+            'parent_id' => 0,
+            'description' => "Корневая категория"
         ];
 
         for ($i = 1; $i < 6; $i++ ){
@@ -28,7 +29,8 @@ class PricelistCategoryTableSeeder extends Seeder
             $categories[] = [
                 'title' => $cat_title,
                 'slug' => Str::slug($cat_title),
-                'parent_id' => 1
+                'parent_id' => 1,
+                'description' => ("description " . $i ."description " . $i ."description " . $i ."description " . $i)
             ];
         }
 
