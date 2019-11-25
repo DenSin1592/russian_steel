@@ -1,6 +1,6 @@
 <footer class="site-footer">
     <div class="container">
-
+    <hr/>
 
         <div class="row">
             <div class="col-lg-7">
@@ -44,7 +44,6 @@
             </div>
 
             <div class="col-lg-5" id="adress">
-                <hr/>
                 <div class="row mb-5">
                     <div class="col-md-12"><h3 class="footer-heading mb-4">Europe</h3></div>
                     <div class="col-md-6">

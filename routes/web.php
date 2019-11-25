@@ -19,7 +19,8 @@ Route::group(['namespace' => "Site"], function (){
     Route::get('/', 'PageController@show_home_page')->name('site/home');
     Route::get('/services', 'PageController@show_services_page')->name('site/about');
     Route::get('/contacts', 'PageController@show_contacts_page')->name('site/contacts');
-    Route::get('/production', 'PageController@show_production_page')->name('site/production');
+    Route::get('/production/{category_id?}', 'PageController@show_production_page')
+        ->name('site/production')->where('category_id', '[0-9]+');
 //    Route::get('/news', 'PageController@show_news_page')->name('site/news');
 });
 

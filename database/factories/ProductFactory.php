@@ -14,8 +14,8 @@ use Illuminate\Support\Str;
 
 $factory->define(\App\Models\PriceProductModel::class, function (Faker $faker) {
     $title_size = rand(1,8);
-    $text_size = rand(100, 1000);
-    $title = $faker->sentence($title_size);
+    $text_size = rand(1000, 10000);
+    $title ='Изделие № ' . $text_size;
     $text = $faker->text($text_size);
     $excerpt = substr($text, 0 ,100);
     $price = 1.11 + (rand(100,1000));
