@@ -14,7 +14,7 @@ class CreatePricelistProductsTable extends Migration
     public function up()
     {
         Schema::create('pricelist_products', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->integer('category_id')->unsigned();
             $table->integer('image_id')->unsigned()->default(1);
             $table->string('title')->unique();
@@ -28,8 +28,8 @@ class CreatePricelistProductsTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('category_id')->references('id')->on('pricelist_categories');
-            $table->foreign('image_id')->references('id')->on('pricelist_images');
+            //$table->foreign('category_id')->references('id')->on('pricelist_categories');
+            //$table->foreign('image_id')->references('id')->on('pricelist_images');
             $table->index('is_added');
         });
     }

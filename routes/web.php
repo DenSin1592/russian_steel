@@ -24,3 +24,9 @@ Route::group(['namespace' => "Site"], function (){
 //    Route::get('/news', 'PageController@show_news_page')->name('site/news');
 });
 
+Route::group(['prefix' => 'admin'], function(){
+    Route::get('/home', function (){
+        return view('admin_panel.admin_home');
+    });
+});
+

@@ -13,12 +13,12 @@ use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
 $factory->define(\App\Models\PriceProductModel::class, function (Faker $faker) {
-    $title_size = rand(1,8);
-    $text_size = rand(1000, 10000);
-    $title ='Изделие № ' . $text_size;
+    $title_num = rand(1,10000);
+    $text_size = rand(100, 1000);
+    $title ='Изделие № ' . $title_num;
     $text = $faker->text($text_size);
     $excerpt = substr($text, 0 ,100);
-    $price = 1.11 + (rand(100,1000));
+    $price = 1.11 + (rand(1000,100000));
     $is_added = rand(1,5)>1;
     return [
         'category_id' => rand(2,6),
