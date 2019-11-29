@@ -85,7 +85,7 @@
 
 
                                     <li><a href={{route('site/contacts')}}>Contact</a></li>
-                                    <li><a href={{route('auth/home')}}>Log In</a></li>
+
 
                                 </ul>
                             </div>

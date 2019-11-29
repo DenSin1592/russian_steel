@@ -12,6 +12,7 @@
                             <li><a href={{route('site/about')}}>Services</a></li>
                             <li><a href={{route('site/production')}}>Production</a></li>
                             <li><a href={{route('site/contacts')}}>Contacts</a></li>
+                            <li><a href={{route('auth/home')}}>Log In</a></li>
                             {{--<li><a href="#">Contacts</a></li>
                             <li><a href="#">Sustainability</a></li>
                             <li><a href="#">News</a></li>
