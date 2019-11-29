@@ -7,7 +7,7 @@
 
 <div class="site-wrap">
 
-    @include('layouts.includes.navbar_site')
+    @include('layouts.includes.navbar_admin')
 
     @yield('content')
 
