@@ -11,10 +11,6 @@
 |
 */
 
-/*Route::get('/', function () {
-    return view('russian_steel_site.home.home');
-});*/
-
 Route::group(['namespace' => "Site"], function (){
     Route::get('/', 'PageController@show_home_page')->name('site/home');
     Route::get('/services', 'PageController@show_services_page')->name('site/about');
@@ -24,9 +20,12 @@ Route::group(['namespace' => "Site"], function (){
 //    Route::get('/news', 'PageController@show_news_page')->name('site/news');
 });
 
+Auth::routes(['register' => false]);
+
+Route::get('auth/home', 'HomeController@index')->name('auth/home');
+
 Route::group(['prefix' => 'admin'], function(){
     Route::get('/home', function (){
         return view('admin_panel.admin_home');
-    });
+    })->name('admin/home')->middleware('auth');
 });
-
