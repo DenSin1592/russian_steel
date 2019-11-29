@@ -17,15 +17,15 @@ Route::group(['namespace' => "Site"], function (){
     Route::get('/contacts', 'PageController@show_contacts_page')->name('site/contacts');
     Route::get('/production/{category_id?}', 'PageController@show_production_page')
         ->name('site/production')->where('category_id', '[0-9]+');
-//    Route::get('/news', 'PageController@show_news_page')->name('site/news');
+    /*Route::get('/news', 'PageController@show_news_page')->name('site/news');*/
 });
 
 Auth::routes(['register' => false]);
 
-Route::get('auth/home', 'HomeController@index')->name('auth/home');
+Route::get('auth/home', 'Auth\HomeController@index')->name('auth/home');
 
-Route::group(['prefix' => 'admin'], function(){
-    Route::get('/home', function (){
-        return view('admin_panel.admin_home');
-    })->name('admin/home')->middleware('auth');
+Route::group(['prefix' => 'admin', 'namespace' => "AdminPanel"] , function(){
+    Route::get('/home', 'HomeController@index')->name('admin/home');
+    Route::resource('categories', 'CategoryController')->except(['show','destroy'])->names('admin/categories');
+    Route::resource('productions', 'ProductionController')->except('show')->names('admin/productions');
 });
