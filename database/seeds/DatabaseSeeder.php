@@ -14,6 +14,6 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
         $this->call(PricelistImagesTableSeeder::class);
         $this->call(PricelistCategoryTableSeeder::class);
-        factory(\App\Models\PriceProductModel::class, 50)->create();
+        factory(\App\Models\PriceProductModel::class, 100)->create();
     }
 }
