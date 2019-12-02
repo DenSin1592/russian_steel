@@ -30,6 +30,6 @@ $factory->define(\App\Models\PriceProductModel::class, function (Faker $faker) {
         'content_row' => $text,
         'content_html' => $text,
         'is_added' => $is_added,
-        'added_at' => (($is_added) ? $faker->dateTimeBetween("- 40 days", "- 2 days") : null)
+        'added_at' => (($is_added) ? $faker->dateTimeBetween("NOW", "+ 2 days") : null)
     ];
 });

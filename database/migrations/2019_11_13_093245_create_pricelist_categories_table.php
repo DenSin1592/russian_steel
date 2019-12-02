@@ -21,9 +21,9 @@ class CreatePricelistCategoriesTable extends Migration
             $table->string('title')->unique();
             $table->text('description')->nullable();
             $table->timestamps();
-            $table->softDeletes();
+            //$table->softDeletes();
 
-            $table->foreign('image_id')->references('id')->on('pricelist_images');
+            //$table->foreign('image_id')->references('id')->on('pricelist_images');
         });
     }
 
