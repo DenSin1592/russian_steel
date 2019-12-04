@@ -74,7 +74,7 @@
 
                   <div class="row form-group">
                      <div class="col-md-12">
-                        <input type="submit" value="Создать" class="btn btn-primary">
+                        <input type="submit" value="Изменить" class="btn btn-primary">
                      </div>
                   </div>
 
