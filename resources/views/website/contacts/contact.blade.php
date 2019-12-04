@@ -17,8 +17,8 @@
         <div class="row">
        
           <div class="col-md-12 col-lg-8 mb-5">
-          
-            
+
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A39b5a2c283b219956873b4b017971599fa986dbb1295ad6da9a6f5a436647760&amp;width=645&amp;height=461&amp;lang=ru_RU&amp;scroll=true"></script>
           
             {{--<form action="#" class="p-5 bg-white">
 

@@ -164,7 +164,7 @@
               <li>Поставщик</li>
               <li>Подрядчик</li>
             </ul>
-            <p><a href="#adress" class="btn btn-outline-primary btn-sm rounded-0 p-2 px-4">Узнать Адрес</a></p>
+            <p><a href="{{route('site/contacts')}}" class="btn btn-outline-primary btn-sm rounded-0 p-2 px-4">Узнать Адрес</a></p>
           </div>
         </div>
       </div>
