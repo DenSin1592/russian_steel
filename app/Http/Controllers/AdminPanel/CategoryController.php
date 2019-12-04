@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
+use App\Models\PriceCategoryModel;
 use Illuminate\Http\Request;
 
 class CategoryController extends BaseController
@@ -14,7 +15,11 @@ class CategoryController extends BaseController
      */
     public function index()
     {
-        return view('admin_panel.admin_categories');
+        $categories = PriceCategoryModel::select('id', 'title')
+            ->where('id', '>', '1')
+            ->paginate(5);
+
+        return view('admin_panel.admin_categories', compact('categories'));
     }
 
     /**
@@ -35,7 +40,7 @@ class CategoryController extends BaseController
      */
     public function store(Request $request)
     {
-        //
+        dd(__METHOD__);
     }
 
     /**
@@ -57,7 +62,10 @@ class CategoryController extends BaseController
      */
     public function edit($id)
     {
-        return view('admin_panel.admin_category_update');
+        $category = PriceCategoryModel::findOrFail($id);
+        /*$categories_list = PriceCategoryModel::all();*/
+
+        return view('admin_panel.admin_category_update', compact('category'));
     }
 
     /**
@@ -69,7 +77,7 @@ class CategoryController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        //
+        dd(__METHOD__);
     }
 
     /**
@@ -80,6 +88,6 @@ class CategoryController extends BaseController
      */
     public function destroy($id)
     {
-        //
+        dd(__METHOD__);
     }
 }

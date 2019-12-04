@@ -1,6 +1,8 @@
 @extends('layouts.admin')
 
 @section('content')
+
+
    <div class="site-section">
       <div class="container">
 
@@ -11,8 +13,8 @@
             <div class="col-md-7 text-center">
                <p>Пункт управления категориями</p>
             </div>
-            <div class="col-md-7 text-right">
-               <a href="#"><button type="button" class="btn btn-danger">Создать</button></a>
+            <div class="corl-md-7 text-right">
+               <a href="{{Route('admin/categories.create')}}"><button type="button" class="btn btn-danger">Создать</button></a>
             </div>
          </div>
 
@@ -20,47 +22,34 @@
             <thead>
             <tr>
                <th>#</th>
-               <th>First Name</th>
-               <th>Last Name</th>
-               <th>Username</th>
+               <th>Имя</th>
+               <th>Id</th>
                <th>Управление</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-               <th scope="row">1</th>
-               <td>Mark</td>
-               <td>Otto</td>
-               <td>@mdo</td>
+            @php /** @var \App\Models\PriceCategoryModel $categories */ @endphp
+            @foreach($categories as $category)
+               <tr>
+                  <th scope="row">{{($category->id)-1}}</th>
+                  <td>{{$category->title}}</td>
+                  <td>{{$category->id}}</td>
 
-               <td>
-                  <a href="#"><button type="button" class="btn btn-warning">Изменить</button></a>
-               </td>
-            </tr>
-            <tr>
-               <th scope="row">2</th>
-               <td>Jacob</td>
-               <td>Thornton</td>
-               <td>@fat</td>
+                  <td>
+                     <a href="{{Route('admin/categories.edit', $category->id)}}"><button type="button" class="btn btn-warning">Изменить</button></a>
+                  </td>
+               </tr>
+            @endforeach
 
-               <td>
-                  <a href="#"><button type="button" class="btn btn-warning">Изменить</button></a>
-               </td>
-
-            </tr>
-            <tr>
-               <th scope="row">3</th>
-               <td>Larry</td>
-               <td>the Bird</td>
-               <td>@twitter</td>
-
-               <td>
-                  <a href="#"><button type="button" class="btn btn-warning">Изменить</button></a>
-               </td>
-
-            </tr>
             </tbody>
          </table>
+      </div>
+      <div class="row">
+         <div class="col-md-12 text-center">
+            <div class="site-block-27">
+                <?php echo $categories->render(); ?>
+            </div>
+         </div>
       </div>
    </div>
 @endsection
