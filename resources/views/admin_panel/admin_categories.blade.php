@@ -14,7 +14,7 @@
                <p>Пункт управления категориями</p>
             </div>
             <div class="corl-md-7 text-right">
-               <a href="{{Route('admin/categories.create')}}"><button type="button" class="btn btn-danger">Создать</button></a>
+               <a href="{{route('admin/categories.create')}}"><button type="button" class="btn btn-danger">Создать</button></a>
             </div>
          </div>
 
@@ -36,7 +36,7 @@
                   <td>{{$category->id}}</td>
 
                   <td>
-                     <a href="{{Route('admin/categories.edit', $category->id)}}"><button type="button" class="btn btn-warning">Изменить</button></a>
+                     <a href="{{route('admin/categories.edit', $category->id)}}"><button type="button" class="btn btn-warning">Изменить</button></a>
                   </td>
                </tr>
             @endforeach

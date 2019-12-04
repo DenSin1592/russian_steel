@@ -18,36 +18,38 @@
       <div class="container">
          <div class="row">
             <div class="col-md-12 col-lg-8 mb-5">
-               <form action="#" class="p-5 bg-white">
-
+                @php /** @var \App\Models\PriceCategoryModel $category*/ @endphp
+               <form action="{{route('admin/categories.update', $category->id)}}" method="post" class="p-5 bg-white">
+               @method('PATCH')
+                  @csrf
                   <div class="row form-group">
                      <div class="col-md-12 mb-3 mb-md-0">
                         <label class="font-weight-bold" for="fullname">Имя</label>
-                        <input type="text" id="fullname" class="form-control" placeholder="Full Name">
+                        <input type="text" name="title" id="fullname" class="form-control" placeholder="Имя категории" value="{{$category->title}}">
                      </div>
                   </div>
 
-
-                  <div class="row">
-                     <div class="col">
+                   {{-- <div class="row">
+                     --}}{{--<div class="col">
                         <label class="mr-sm-2" for="SelectParentTitle">Родитель</label>
-                        <select class="custom-select mr-sm-2" id="SelectParentTitle">
+                        <select name="parent" class="custom-select mr-sm-2" id="SelectParentTitle">
                            <option selected>Выбор</option>
                            <option value="1">One</option>
                            <option value="2">Two</option>
                            <option value="3">Three</option>
                         </select>
-                     </div>
-                     <div class="col">
+                     </div>--}}{{--
+                    --}}{{-- <div class="col">
                         <label class="mr-sm-2" for="SelectImageTitle">Изображение</label>
-                        <select class="custom-select mr-sm-2" id="SelectImageTitle">
+                        <select name="image" class="custom-select mr-sm-2" id="SelectImageTitle">
                            <option selected>Выбор</option>
-                           <option value="1">One</option>
-                           <option value="2">Two</option>
-                           <option value="3">Three</option>
+                           <option value="1">1</option>
+                           <option value="2">2</option>
+                           <option value="3">3</option>
                         </select>
-                     </div>
-                  </div>
+                     </div>--}}{{--
+                  </div>--}}
+
                   {{--<div class="row form-group">
                      <div class="col-md-12">
                         <label class="font-weight-bold" for="email">Email</label>
@@ -68,7 +70,7 @@
                   <div class="row form-group">
                      <div class="col-md-12">
                         <label class="font-weight-bold" for="message">Описание</label>
-                        <textarea name="message" id="message" cols="30" rows="5" class="form-control" placeholder="Say hello to us"></textarea>
+                        <textarea name="description" name="message" id="message" cols="30" rows="5" class="form-control" placeholder="Say hello to us">{{$category->description}}</textarea>
                      </div>
                   </div>
 
@@ -85,11 +87,15 @@
             <div class="col-lg-4">
                <div class="p-4 mb-3 bg-white">
                   <h3 class="h5 text-black mb-3">Общая Информация</h3>
-                  <p class="mb-0 font-weight-bold">...</p>
-                  <p class="mb-4">... </p>
 
-                  <p class="mb-0 font-weight-bold">...</p>
-                  <p class="mb-4">...</p>
+                   <p class="mb-0 font-weight-bold">Id</p>
+                   <p class="mb-4">{{$category->id}}</p>
+
+                  <p class="mb-0 font-weight-bold">Дата создания</p>
+                  <p class="mb-4">{{$category->created_at}}</p>
+
+                  <p class="mb-0 font-weight-bold">Дата последнего изменения</p>
+                  <p class="mb-4">{{$category->updated_at}}</p>
 
                   <p class="mb-0 font-weight-bold">...</p>
                   <p class="mb-0">...</p>
@@ -99,7 +105,7 @@
                <div class="p-4 mb-3 bg-white">
                   <h3 class="h5 text-black mb-3">Отмена</h3>
                   <p>Вы можете отменить процесс редактровния, вернувшись на главную страницу.</p>
-                  <p><a href="#" class="btn btn-primary px-4 py-2 text-white">Отмена редактирования</a></p>
+                  <p><a href="{{route('admin/categories.index')}}" class="btn btn-primary px-4 py-2 text-white">Отмена редактирования</a></p>
                </div>
             </div>
          </div>
