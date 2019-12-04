@@ -10,12 +10,19 @@
             <div class="col-12 text-center">
                <h2 class="font-weight-light text-black display-4">Категории</h2>
             </div>
+            @if(Session::has('success'))
+               <div class="text-success col-md-7 text-center">
+                  <p><strong>{{Session::get('success')}}</strong></p>
+               </div>
+            @else
             <div class="col-md-7 text-center">
                <p>Пункт управления категориями</p>
             </div>
-            <div class="corl-md-7 text-right">
+            @endif
+            <div class="col-md-7 text-right">
                <a href="{{route('admin/categories.create')}}"><button type="button" class="btn btn-danger">Создать</button></a>
             </div>
+
          </div>
 
          <table class="table table-dark">

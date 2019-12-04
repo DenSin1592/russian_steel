@@ -4,6 +4,7 @@
    <div class="site-section">
 
       <div class="container">
+
          <div class="row mb-5 justify-content-center">
             <div class="col-12 text-center">
                <h2 class="font-weight-light text-black display-4">Редактирование</h2>
@@ -11,6 +12,12 @@
             <div class="col-md-7 text-center">
                <p>Редактирование категории</p>
             </div>
+             @php /** @var \Illuminate\Support\ViewErrorBag $errors*/ @endphp
+             @if($errors->any())
+                 <div class="bg-danger col-md-7 text-center">
+                     <p>{{$errors->first()}}</p>
+                 </div>
+             @endif
          </div>
 
       </div>
@@ -25,7 +32,7 @@
                   <div class="row form-group">
                      <div class="col-md-12 mb-3 mb-md-0">
                         <label class="font-weight-bold" for="fullname">Имя</label>
-                        <input type="text" name="title" id="fullname" class="form-control" placeholder="Имя категории" value="{{$category->title}}">
+                        <input type="text" name="title" id="fullname" class="form-control" placeholder="Имя категории" value="{{old('title',$category->title)}}">
                      </div>
                   </div>
 
@@ -70,7 +77,7 @@
                   <div class="row form-group">
                      <div class="col-md-12">
                         <label class="font-weight-bold" for="message">Описание</label>
-                        <textarea name="description" name="message" id="message" cols="30" rows="5" class="form-control" placeholder="Say hello to us">{{$category->description}}</textarea>
+                        <textarea name="description" name="message" id="message" cols="30" rows="5" class="form-control" placeholder="Say hello to us">{{old('description',$category->description)}}</textarea>
                      </div>
                   </div>
 

@@ -77,7 +77,25 @@ class CategoryController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        dd(__METHOD__);
+        $category = PriceCategoryModel::find($id);
+        if(empty($category))
+            return back()
+                ->withErrors(['message' => "Категория с [id = $id] не найдена!"])
+                ->withInput();
+
+        $data_request = $request->all();
+        $result = $category->fill($data_request)->save();
+
+        if($result)
+            return redirect()
+                ->route('admin/categories.index')
+                ->with(['success' => "Успешно изменено"]);
+        else
+            return back()
+                ->withErrors(['message' => "Ошибка сохранения"])
+                ->withInput();
+
+
     }
 
     /**

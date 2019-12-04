@@ -24,7 +24,7 @@ class ProductionController extends BaseController
      */
     public function create()
     {
-        return view('admin_panel.admin_category_create');
+        return view('admin_panel.admin_production_create');
     }
 
     /**
