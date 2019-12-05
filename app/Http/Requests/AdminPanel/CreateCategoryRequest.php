@@ -4,7 +4,7 @@ namespace App\Http\Requests\AdminPanel;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateCategoryRequest extends FormRequest
+class CreateCategoryRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class UpdateCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'string|required|min:5|max:50',
+            'title' => 'string|required|min:5|max:50|unique:pricelist_categories',
             'description' => 'string|min:3|max:1000'
         ];
     }

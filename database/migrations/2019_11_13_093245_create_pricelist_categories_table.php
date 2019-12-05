@@ -17,7 +17,7 @@ class CreatePricelistCategoriesTable extends Migration
             $table->bigIncrements('id');
             $table->integer('parent_id')->unsigned()->default(1);
             $table->integer('image_id')->unsigned()->default(1);
-            $table->string('slug')->unique();
+            $table->string('slug')->unique()->nullable();
             $table->string('title')->unique();
             $table->text('description')->nullable();
             $table->timestamps();

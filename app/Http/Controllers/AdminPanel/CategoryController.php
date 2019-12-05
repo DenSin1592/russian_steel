@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminPanel\CreateCategoryRequest;
 use App\Http\Requests\AdminPanel\UpdateCategoryRequest;
 use App\Models\PriceCategoryModel;
 use Illuminate\Http\Request;
@@ -39,9 +40,20 @@ class CategoryController extends BaseController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateCategoryRequest $request)
     {
-        dd(__METHOD__);
+        $request_date = $request->input();
+        $new_category = new PriceCategoryModel();
+        $result = $new_category->create($request_date);
+
+        if($result)
+            return redirect()
+                ->route('admin/categories.index')
+                ->with(['success' => "Успешно создано"]);
+        else
+            return back()
+                ->withErrors(['message' => "Ошибка сохранения"])
+                ->withInput();
     }
 
     /**
@@ -85,7 +97,7 @@ class CategoryController extends BaseController
                 ->withInput();
 
         $data_request = $request->all();
-        $result = $category->fill($data_request)->save();
+        $result = $category->update($data_request);
 
         if($result)
             return redirect()

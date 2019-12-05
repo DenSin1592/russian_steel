@@ -19,9 +19,8 @@ Route::group(['namespace' => "Site"], function (){
         ->name('site/production')->where('category_id', '[0-9]+');
     /*Route::get('/news', 'PageController@show_news_page')->name('site/news');*/
 });
+
 Auth::routes(App\Http\Controllers\Auth\CheckRegisterController::close_register());
-
-
 
 Route::get('auth/home', 'Auth\HomeController@index')->name('auth/home');
 

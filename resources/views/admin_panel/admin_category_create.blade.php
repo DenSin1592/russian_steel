@@ -13,6 +13,12 @@
             <div class="col-md-7 text-center">
                <p>Создание новой категории</p>
             </div>
+            @php /** @var \Illuminate\Support\ViewErrorBag $errors*/ @endphp
+            @if($errors->any())
+               <div class="bg-danger col-md-7 text-center">
+                  <p>{{$errors->first()}}</p>
+               </div>
+            @endif
          </div>
 
       </div>
@@ -20,17 +26,17 @@
       <div class="container">
             <div class="row">
                <div class="col-md-12 col-lg-8 mb-5">
-                  <form action="#" class="p-5 bg-white">
-
+                  <form action="{{route('admin/categories.store')}}" method="POST" class="p-5 bg-white">
+                     @csrf
                      <div class="row form-group">
                         <div class="col-md-12 mb-3 mb-md-0">
-                           <label class="font-weight-bold" for="fullname">Имя</label>
-                           <input type="text" id="fullname" class="form-control" placeholder="Full Name">
+                           <label class="font-weight-bold" for="fullname">Название</label>
+                           <input type="text" value="{{old('title')}}" id="title" name="title" class="form-control" placeholder="Название категории">
                         </div>
                      </div>
 
 
-                     <div class="row">
+                     {{--<div class="row">
                         <div class="col">
                            <label class="mr-sm-2" for="SelectParentTitle">Родитель</label>
                            <select class="custom-select mr-sm-2" id="SelectParentTitle">
@@ -49,7 +55,7 @@
                               <option value="3">Three</option>
                            </select>
                         </div>
-                     </div>
+                     </div>--}}
                      {{--<div class="row form-group">
                         <div class="col-md-12">
                            <label class="font-weight-bold" for="email">Email</label>
@@ -70,7 +76,7 @@
                      <div class="row form-group">
                         <div class="col-md-12">
                            <label class="font-weight-bold" for="message">Описание</label>
-                           <textarea name="message" id="message" cols="30" rows="5" class="form-control" placeholder="Say hello to us"></textarea>
+                           <textarea name="description" id="description"  cols="30" rows="5" class="form-control" placeholder="Описание">{{old('description')}}</textarea>
                         </div>
                      </div>
 
