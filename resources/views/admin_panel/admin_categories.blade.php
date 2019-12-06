@@ -35,8 +35,8 @@
             </tr>
             </thead>
             <tbody>
-            @php /** @var \App\Models\PriceCategoryModel $categories */ @endphp
-            @foreach($categories as $category)
+            @php /** @var \App\Models\PriceCategoryModel $categories_paginator */ @endphp
+            @foreach($categories_paginator as $category)
                <tr>
                   <th scope="row">{{($category->id)-1}}</th>
                   <td>{{$category->title}}</td>
@@ -54,7 +54,7 @@
       <div class="row">
          <div class="col-md-12 text-center">
             <div class="site-block-27">
-                <?php echo $categories->render(); ?>
+                <?php echo $categories_paginator->render(); ?>
             </div>
          </div>
       </div>

@@ -7,9 +7,21 @@ use App\Http\Requests\AdminPanel\CreateCategoryRequest;
 use App\Http\Requests\AdminPanel\UpdateCategoryRequest;
 use App\Models\PriceCategoryModel;
 use Illuminate\Http\Request;
+use App\Repositories\CategoryRepository;
 
 class CategoryController extends BaseController
 {
+    /**
+     * @var CategoryRepository|\Illuminate\Contracts\Foundation\Application|mixed
+     */
+    private $repository;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->repository = app(CategoryRepository::class);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,11 +29,9 @@ class CategoryController extends BaseController
      */
     public function index()
     {
-        $categories = PriceCategoryModel::select('id', 'title')
-            ->where('id', '>', '1')
-            ->paginate(5);
+        $categories_paginator = $this->repository->getAllWithPaginate(5);
 
-        return view('admin_panel.admin_categories', compact('categories'));
+        return view('admin_panel.admin_categories', compact('categories_paginator'));
     }
 
     /**
@@ -75,9 +85,10 @@ class CategoryController extends BaseController
      */
     public function edit($id)
     {
-        $category = PriceCategoryModel::findOrFail($id);
-        /*$categories_list = PriceCategoryModel::all();*/
+        $category = $this->repository->getForEdit($id);
+        /*$categories_combobox = $this->$repository->getForCombobox();*/
 
+        if(empty($category)) abort(404);
         return view('admin_panel.admin_category_update', compact('category'));
     }
 
@@ -90,7 +101,7 @@ class CategoryController extends BaseController
      */
     public function update(UpdateCategoryRequest $request, $id)
     {
-        $category = PriceCategoryModel::find($id);
+        $category = $this->repository->getForEdit($id);
         if(empty($category))
             return back()
                 ->withErrors(['message' => "Категория с [id = $id] не найдена!"])

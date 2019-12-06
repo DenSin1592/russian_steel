@@ -29,3 +29,5 @@ Route::group(['prefix' => 'admin', 'namespace' => "AdminPanel"] , function(){
     Route::resource('categories', 'CategoryController')->except(['show','destroy'])->names('admin/categories');
     Route::resource('productions', 'ProductionController')->except('show')->names('admin/productions');
 });
+
+Route::fallback('Site\PageController@show_home_page');
