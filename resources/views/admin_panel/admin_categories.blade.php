@@ -25,7 +25,7 @@
 
          </div>
 
-         <table class="table table-dark">
+         <table class="table table-hover table-dark">
             <thead>
             <tr>
                <th>#</th>

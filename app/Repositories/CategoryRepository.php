@@ -41,11 +41,16 @@ class CategoryRepository extends BaseRepository
      */
     public function getForCombobox()
     {
-        return $this->startCondition()->select('id','title')->get();
+        return $this->startCondition()
+            ->select('id','title')
+            ->get();
     }
 
     public function getAllWithPaginate($count_in_page = null)
     {
-        return $this->startCondition()->select('id','title')->where('id', '>', '1')->paginate($count_in_page);
+        return $this->startCondition()
+            ->select('id','title')
+            ->where('id', '>', '1')
+            ->paginate($count_in_page);
     }
 }

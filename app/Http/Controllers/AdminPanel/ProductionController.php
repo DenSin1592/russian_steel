@@ -3,10 +3,19 @@
 namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\ProductionRepository;
 use Illuminate\Http\Request;
 
 class ProductionController extends BaseController
 {
+    private $repository;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->repository = app(ProductionRepository::class);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +23,9 @@ class ProductionController extends BaseController
      */
     public function index()
     {
-        return view('admin_panel.admin_productions');
+        $products_paginate = $this->repository->getAllWithPaginate(10);
+
+        return view('admin_panel.admin_productions', compact('products_paginate'));
     }
 
     /**
@@ -24,6 +35,7 @@ class ProductionController extends BaseController
      */
     public function create()
     {
+
         return view('admin_panel.admin_production_create');
     }
 
@@ -44,10 +56,10 @@ class ProductionController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    /*public function show($id)
     {
         return view('admin_panel.admin_production_show');
-    }
+    }*/
 
     /**
      * Show the form for editing the specified resource.
@@ -80,6 +92,6 @@ class ProductionController extends BaseController
      */
     public function destroy($id)
     {
-        //
+        dd(__METHOD__);
     }
 }

@@ -20,6 +20,8 @@ $factory->define(\App\Models\PriceProductModel::class, function (Faker $faker) {
     $excerpt = substr($text, 0 ,100);
     $price = 1.11 + (rand(1000,100000));
     $is_added = rand(1,5)>1;
+    $created_at = $faker->dateTimeBetween("- 60 days", "-2 days");
+
     return [
         'category_id' => rand(2,6),
         //'image_id' => ((rand(1,4) > 1 )? 1 : 2),
@@ -30,6 +32,8 @@ $factory->define(\App\Models\PriceProductModel::class, function (Faker $faker) {
         'content_row' => $text,
         'content_html' => $text,
         'is_added' => $is_added,
-        'added_at' => (($is_added) ? $faker->dateTimeBetween("NOW", "+ 2 days") : null)
+        'added_at' => (($is_added) ? $faker->dateTimeBetween("NOW", "+2 days") : null),
+        'created_at' => $created_at,
+        'updated_at' => $created_at
     ];
 });
