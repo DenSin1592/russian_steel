@@ -26,6 +26,12 @@
                         <input type="text" id="fullname" class="form-control" >
                      </div>
                   </div>
+                  <div class="row form-group">
+                     <div class="col-md-12 mb-3 mb-md-0">
+                        <label class="font-weight-bold" for="fullname" hidden>slug</label>
+                        <input type="text" id="fullname" name="slug" class="form-control" hidden >
+                     </div>
+                  </div>
 
 
                   <div class="row">

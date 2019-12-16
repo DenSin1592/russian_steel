@@ -42,6 +42,12 @@
                         <input type="text" id="fullname" class="form-control" name="title" value="{{old('title', $product_final->title)}}" >
                      </div>
                   </div>
+                  <div class="row form-group">
+                     <div class="col-md-12 mb-3 mb-md-0">
+                        <label class="font-weight-bold" for="fullname" hidden>slug</label>
+                        <input type="text" id="fullname" name="slug" class="form-control" hidden  value="{{old('slug', $product_final->slug)}}" >
+                     </div>
+                  </div>
 
 
                   <input type="hidden" id="fullname"  class="form-control" name="id" value="{{old('id', $product_final->id)}}" >

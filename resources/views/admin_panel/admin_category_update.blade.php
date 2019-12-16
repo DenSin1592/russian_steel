@@ -39,6 +39,12 @@
                         <input type="text" name="title" id="fullname" class="form-control" placeholder="Имя категории" value="{{old('title',$category_final->title)}}">
                      </div>
                   </div>
+                  <div class="row form-group">
+                     <div class="col-md-12 mb-3 mb-md-0">
+                        <label class="font-weight-bold" for="fullname" hidden>slug</label>
+                        <input type="text" id="fullname" name="slug" class="form-control" hidden value="{{old('slug',$category_final->slug)}}">
+                     </div>
+                  </div>
 
                    {{-- <div class="row">
                      --}}{{--<div class="col">
