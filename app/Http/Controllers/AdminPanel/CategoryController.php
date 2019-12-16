@@ -14,12 +14,12 @@ class CategoryController extends BaseController
     /**
      * @var CategoryRepository|\Illuminate\Contracts\Foundation\Application|mixed
      */
-    private $repository;
+    private $CategoryRepository;
 
     public function __construct()
     {
         parent::__construct();
-        $this->repository = app(CategoryRepository::class);
+        $this->CategoryRepository = app(CategoryRepository::class);
     }
 
     /**
@@ -29,7 +29,7 @@ class CategoryController extends BaseController
      */
     public function index()
     {
-        $categories_paginator = $this->repository->getAllWithPaginate(5);
+        $categories_paginator = $this->CategoryRepository->getAllWithPaginate(5);
 
         return view('admin_panel.admin_categories', compact('categories_paginator'));
     }
@@ -85,8 +85,8 @@ class CategoryController extends BaseController
      */
     public function edit($id)
     {
-        $category = $this->repository->getForEdit($id);
-        /*$categories_combobox = $this->$repository->getForCombobox();*/
+        $category = $this->CategoryRepository->getOneById($id);
+        /*$categories_combobox = $this->$CategoryRepository->getForCombobox();*/
 
         if(empty($category)) abort(404);
         return view('admin_panel.admin_category_update', compact('category'));
@@ -101,7 +101,7 @@ class CategoryController extends BaseController
      */
     public function update(UpdateCategoryRequest $request, $id)
     {
-        $category = $this->repository->getForEdit($id);
+        $category = $this->CategoryRepository->getOneById($id);
         if(empty($category))
             return back()
                 ->withErrors(['message' => "Категория с [id = $id] не найдена!"])

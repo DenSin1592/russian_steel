@@ -1,7 +1,10 @@
 @extends('layouts.admin')
 
 @section('content')
-
+   @php /** @var \App\Models\PriceCategoryModel $categories_paginator*/ @endphp
+   @php
+      $categories_paginator_final = $categories_paginator;
+   @endphp
 
    <div class="site-section">
       <div class="container">
@@ -35,8 +38,8 @@
             </tr>
             </thead>
             <tbody>
-            @php /** @var \App\Models\PriceCategoryModel $categories_paginator */ @endphp
-            @foreach($categories_paginator as $category)
+
+            @foreach($categories_paginator_final as $category)
                <tr>
                   <th scope="row">{{($category->id)-1}}</th>
                   <td>{{$category->title}}</td>
@@ -54,7 +57,7 @@
       <div class="row">
          <div class="col-md-12 text-center">
             <div class="site-block-27">
-                <?php echo $categories_paginator->render(); ?>
+                <?php echo $categories_paginator_final->render(); ?>
             </div>
          </div>
       </div>

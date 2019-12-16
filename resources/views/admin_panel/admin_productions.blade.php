@@ -1,6 +1,10 @@
 @extends('layouts.admin')
 
 @section('content')
+   @php /** @var App\Models\PriceProductModel $products_paginate */ @endphp
+   @php
+      $products_paginate_final = $products_paginate;
+   @endphp
    <div class="site-section">
       <div class="container">
 
@@ -35,8 +39,7 @@
             </tr>
             </thead>
             <tbody>
-            @php /** @var App\Models\PriceProductModel $products_paginate */ @endphp
-            @foreach($products_paginate as $product)
+            @foreach($products_paginate_final as $product)
                @php
                   static $count = 0;
                    $count ++;
@@ -48,10 +51,21 @@
                   <td>{{$product->id}}</td>
                   <td>{{$product->category->title}}</td>
                   <td>Опубликована</td>
-                  <td>{{$product->created_at}}</td>
+                  <td>{{$product->added_at}}</td>
                   <td>
                      <a href="{{route("admin/productions.edit", $product->id)}}"><button type="button" class="btn btn-warning">Изменить</button></a>
-                     <a href="{{route('admin/productions.destroy', $product->id)}}"><button type="button" class="btn btn-danger">Удалить</button></a>
+                     <br/>
+                     <form method="post" action="{{route("admin/productions.destroy", $product->id)}}">
+                        @method("DELETE")
+                        @csrf
+                        <div class="row form-group">
+                           <div class="col-md-12">
+                              <input type="submit" value="Удалить" class="btn btn-primary">
+                           </div>
+                        </div>
+
+                     </form>
+
                   </td>
                </tr>
                @else
@@ -63,8 +77,19 @@
                      <td class="text-danger">Не Опубликована</td>
                      <td> </td>
                      <td>
-                        <a href="#"><button type="button" class="btn btn-warning">Изменить</button></a>
-                        <a href="#"><button type="button" class="btn btn-danger">Удалить</button></a>
+                        <a href="{{route("admin/productions.edit", $product->id)}}"><button type="button" class="btn btn-warning">Изменить</button></a>
+                        <br/>
+                        <form  method="post" action="{{route("admin/productions.destroy", $product->id)}}">
+                           @method("DELETE")
+                           @csrf
+                           <div class="row form-group">
+                              <div class="col-md-12">
+                                 <input type="submit" value="Удалить" class="btn btn-primary">
+                              </div>
+                           </div>
+
+                        </form>
+
                      </td>
                   </tr>
                @endif
@@ -75,7 +100,7 @@
       <div class="row">
          <div class="col-md-12 text-center">
             <div class="site-block-27">
-                <?php echo $products_paginate->render(); ?>
+                <?php echo $products_paginate_final->render(); ?>
             </div>
          </div>
       </div>

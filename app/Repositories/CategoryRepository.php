@@ -29,7 +29,7 @@ class CategoryRepository extends BaseRepository
      *
      * Получить модель для редктирования в админке
      */
-    public function getForEdit($id)
+    public function getOneById($id)
     {
         return $this->startCondition()->find($id);
     }
@@ -43,7 +43,8 @@ class CategoryRepository extends BaseRepository
     {
         return $this->startCondition()
             ->select('id','title')
-            ->get();
+            ->where('id', '>', '1')     // для views категорий первый параметр
+            ->get();                    //<option value="1">Выбор категории</option>
     }
 
     public function getAllWithPaginate($count_in_page = null)

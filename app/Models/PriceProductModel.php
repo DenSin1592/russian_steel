@@ -10,6 +10,10 @@ class PriceProductModel extends Model
     use SoftDeletes;
 
     protected $table = 'pricelist_products';
+    protected $guarded = [
+        '_method',
+        '_token'
+    ];
 
     public function category()
     {

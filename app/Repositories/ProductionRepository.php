@@ -31,4 +31,11 @@ class ProductionRepository extends BaseRepository
 
         return $result;
     }
+
+    public function getOneById($id)
+    {
+        $result = $this->startCondition()->find($id);
+
+        return $result;
+    }
 }

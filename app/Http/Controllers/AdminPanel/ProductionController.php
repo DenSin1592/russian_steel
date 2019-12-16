@@ -3,17 +3,22 @@
 namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminPanel\UpdateProductRequest;
+use App\Models\PriceProductModel;
+use App\Repositories\CategoryRepository;
 use App\Repositories\ProductionRepository;
 use Illuminate\Http\Request;
 
 class ProductionController extends BaseController
 {
-    private $repository;
+    private $ProductionRepository;
+    private $CategoryRepository;
 
     public function __construct()
     {
         parent::__construct();
-        $this->repository = app(ProductionRepository::class);
+        $this->ProductionRepository = app(ProductionRepository::class);
+        $this->CategoryRepository = app(CategoryRepository::class);
     }
 
     /**
@@ -23,7 +28,7 @@ class ProductionController extends BaseController
      */
     public function index()
     {
-        $products_paginate = $this->repository->getAllWithPaginate(10);
+        $products_paginate = $this->ProductionRepository->getAllWithPaginate(10);
 
         return view('admin_panel.admin_productions', compact('products_paginate'));
     }
@@ -69,19 +74,39 @@ class ProductionController extends BaseController
      */
     public function edit($id)
     {
-        return view('admin_panel.admin_production_update');
+        $product = $this->ProductionRepository->getOneById($id);
+        if(!$product) abort(404);
+        $comboBox = $this->CategoryRepository->getForCombobox();
+
+        return view('admin_panel.admin_production_update', compact('product', 'comboBox'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateProductRequest $request, $id)
     {
-        //
+        $new_product = $this->ProductionRepository->getOneById($id);
+        if(empty($new_product))
+            return back()
+                ->withErrors(['message' => "Продукт с [id = $id] не найден!"])
+                ->withInput();
+
+        $date = $request->all();
+        $result = $new_product->update($date);
+
+        if(!$result)
+            return back()
+                ->withInput()
+                ->withErrors(['message' => "Операция не удалась"]);
+        else
+            return redirect()
+                ->route('admin/productions.index')
+                ->with(['success' => 'Успешно сохранено']);
     }
 
     /**
@@ -92,6 +117,17 @@ class ProductionController extends BaseController
      */
     public function destroy($id)
     {
-        dd(__METHOD__);
+        $product = $this->ProductionRepository->getOneById($id);
+        $result = $product::destroy($id);
+
+        if(!$result)
+            return back()
+                ->withInput()
+                ->withErrors(['message' => "Удаление не удалось"]);
+        else
+            return redirect()
+                ->route('admin/productions.index')
+                ->with(['success' => 'Успешно удалено']);
+
     }
 }

@@ -86,28 +86,30 @@
                      </div>
                   </div>
 
-
                </form>
             </div>
 
             <div class="col-lg-4">
                <div class="p-4 mb-3 bg-white">
                   <h3 class="h5 text-black mb-3">Общая Информация</h3>
-                  <p class="mb-0 font-weight-bold">...</p>
+                  <p class="mb-0 font-weight-bold">Id</p>
                   <p class="mb-4">... </p>
 
-                  <p class="mb-0 font-weight-bold">...</p>
+                  <p class="mb-0 font-weight-bold">Дата Создания</p>
                   <p class="mb-4">...</p>
 
-                  <p class="mb-0 font-weight-bold">...</p>
+                  <p class="mb-0 font-weight-bold">Дата Последнего изменения</p>
+                  <p class="mb-0">...</p>
+
+                  <p class="mb-0 font-weight-bold">Дата Публикации</p>
                   <p class="mb-0">...</p>
 
                </div>
 
                <div class="p-4 mb-3 bg-white">
-                  <h3 class="h5 text-black mb-3">Отмена</h3>
-                  <p>Вы можете отменить процесс создание, вернувшись на главную страницу.</p>
-                  <p><a href="#" class="btn btn-primary px-4 py-2 text-white">Отмена создания</a></p>
+                  <h3 class="h5 text-black mb-3">Отмена создания</h3>
+                  <p>Вы можете отменить процесс создания, вернувшись на главную страницу.</p>
+                  <p><a href="{{route("admin/productions.index")}}" class="btn btn-primary px-4 py-2 text-white">Отмена</a></p>
                </div>
             </div>
          </div>

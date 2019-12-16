@@ -1,6 +1,10 @@
 @extends('layouts.admin')
 
 @section('content')
+   @php /** @var \App\Models\PriceCategoryModel $category*/ @endphp
+   @php
+      $category_final = $category;
+   @endphp
    <div class="site-section">
 
       <div class="container">
@@ -25,14 +29,14 @@
       <div class="container">
          <div class="row">
             <div class="col-md-12 col-lg-8 mb-5">
-                @php /** @var \App\Models\PriceCategoryModel $category*/ @endphp
-               <form action="{{route('admin/categories.update', $category->id)}}" method="post" class="p-5 bg-white">
+
+               <form action="{{route('admin/categories.update', $category_final->id)}}" method="post" class="p-5 bg-white">
                @method('PATCH')
                   @csrf
                   <div class="row form-group">
                      <div class="col-md-12 mb-3 mb-md-0">
                         <label class="font-weight-bold" for="fullname">Имя</label>
-                        <input type="text" name="title" id="fullname" class="form-control" placeholder="Имя категории" value="{{old('title',$category->title)}}">
+                        <input type="text" name="title" id="fullname" class="form-control" placeholder="Имя категории" value="{{old('title',$category_final->title)}}">
                      </div>
                   </div>
 
@@ -77,7 +81,7 @@
                   <div class="row form-group">
                      <div class="col-md-12">
                         <label class="font-weight-bold" for="message">Описание</label>
-                        <textarea name="description" name="message" id="message" cols="30" rows="5" class="form-control" placeholder="Say hello to us">{{old('description',$category->description)}}</textarea>
+                        <textarea name="description" name="message" id="message" cols="30" rows="5" class="form-control" placeholder="Say hello to us">{{old('description',$category_final->description)}}</textarea>
                      </div>
                   </div>
 
@@ -96,13 +100,13 @@
                   <h3 class="h5 text-black mb-3">Общая Информация</h3>
 
                    <p class="mb-0 font-weight-bold">Id</p>
-                   <p class="mb-4">{{$category->id}}</p>
+                   <p class="mb-4">{{$category_final->id}}</p>
 
                   <p class="mb-0 font-weight-bold">Дата создания</p>
-                  <p class="mb-4">{{$category->created_at}}</p>
+                  <p class="mb-4">{{$category_final->created_at}}</p>
 
                   <p class="mb-0 font-weight-bold">Дата последнего изменения</p>
-                  <p class="mb-4">{{$category->updated_at}}</p>
+                  <p class="mb-4">{{$category_final->updated_at}}</p>
 
                   <p class="mb-0 font-weight-bold">...</p>
                   <p class="mb-0">...</p>
@@ -110,9 +114,9 @@
                </div>
 
                <div class="p-4 mb-3 bg-white">
-                  <h3 class="h5 text-black mb-3">Отмена</h3>
-                  <p>Вы можете отменить процесс редактровния, вернувшись на главную страницу.</p>
-                  <p><a href="{{route('admin/categories.index')}}" class="btn btn-primary px-4 py-2 text-white">Отмена редактирования</a></p>
+                  <h3 class="h5 text-black mb-3">Отмена редактирования</h3>
+                  <p>Вы можете отменить процесс редактирования, вернувшись на главную страницу.</p>
+                  <p><a href="{{route('admin/categories.index')}}" class="btn btn-primary px-4 py-2 text-white">Отмена</a></p>
                </div>
             </div>
          </div>
