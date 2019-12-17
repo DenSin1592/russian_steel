@@ -28,7 +28,7 @@ class UpdateProductRequest extends FormRequest
         /*|unique:pricelist_products,title'*/
         //Rule::unique('pricelist_products')->ignore($this->user->id, 'id')
         return [
-            'id' => ['integer','required', 'min:5', 'max:100'],
+            'id' => ['integer','required'],
             'title' => ['string','required','min:5','max:50', 'unique:pricelist_products,title,'. $this->id],
             'category_id' => 'integer|required|exists:pricelist_categories,id',
             'is_added' => 'bool|nullable',

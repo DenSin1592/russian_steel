@@ -83,12 +83,7 @@ class CategoryObserver
 
     private function setSlug($model)
     {
-        if(empty($model->slug))
-        $model->slug = Str::slug($model->title);
-        else
-            if($model->isDirty('title'))
+        if($model->isDirty('title'))
                 $model->slug = Str::slug($model->title);
-
-
     }
 }

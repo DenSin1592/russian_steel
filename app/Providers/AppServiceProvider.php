@@ -3,8 +3,10 @@
 namespace App\Providers;
 
 use App\Models\PriceCategoryModel;
+use App\Models\PriceProductModel;
 use Illuminate\Support\ServiceProvider;
 use App\Observers\CategoryObserver;
+use App\Observers\ProductObserver;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,5 +28,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         PriceCategoryModel::observe(CategoryObserver::class);
+        PriceProductModel::observe(ProductObserver::class);
     }
 }
