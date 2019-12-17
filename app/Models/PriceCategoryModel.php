@@ -19,4 +19,9 @@ class PriceCategoryModel extends Model
         '_method',
         '_token'
     ];
+
+    public function parent()
+    {
+        return $this->belongsTo('App\Models\PriceCategoryModel', 'parent_id', 'id');
+    }
 }

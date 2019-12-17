@@ -41,7 +41,8 @@ class CategoryController extends BaseController
      */
     public function create()
     {
-        return view('admin_panel.admin_category_create');
+        $comboBox = $this->CategoryRepository->getForCombobox();
+        return view('admin_panel.admin_category_create', compact('comboBox'));
     }
 
     /**
@@ -86,10 +87,10 @@ class CategoryController extends BaseController
     public function edit($id)
     {
         $category = $this->CategoryRepository->getOneById($id);
-        /*$categories_combobox = $this->$CategoryRepository->getForCombobox();*/
+        $comboBox = $this->CategoryRepository->getForCombobox();
 
         if(empty($category)) abort(404);
-        return view('admin_panel.admin_category_update', compact('category'));
+        return view('admin_panel.admin_category_update', compact('category','comboBox'));
     }
 
     /**

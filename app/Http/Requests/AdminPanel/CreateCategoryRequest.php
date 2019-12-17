@@ -25,7 +25,8 @@ class CreateCategoryRequest extends FormRequest
     {
         return [
             'title' => 'string|required|min:5|max:50|unique:pricelist_categories',
-            'description' => 'string|min:3|max:1000'
+            'description' => 'string|min:3|max:1000',
+            'category_id' => 'integer|exists:pricelist_categories,id'
         ];
     }
 }

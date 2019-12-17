@@ -13,13 +13,13 @@ use Illuminate\Http\Request;
 class ProductionController extends BaseController
 {
     private $ProductionRepository;
-    private $CategoryRepository;
+
 
     public function __construct()
     {
         parent::__construct();
         $this->ProductionRepository = app(ProductionRepository::class);
-        $this->CategoryRepository = app(CategoryRepository::class);
+
     }
 
     /**
@@ -41,7 +41,7 @@ class ProductionController extends BaseController
      */
     public function create()
     {
-        $comboBox = $this->CategoryRepository->getForCombobox();
+        $comboBox = $this->ProductionRepository->getForCombobox();
         return view('admin_panel.admin_production_create', compact('comboBox'));
     }
 
@@ -88,7 +88,7 @@ class ProductionController extends BaseController
     {
         $product = $this->ProductionRepository->getOneById($id);
         if(!$product) abort(404);
-        $comboBox = $this->CategoryRepository->getForCombobox();
+        $comboBox = $this->ProductionRepository->getForCombobox();
 
         return view('admin_panel.admin_production_update', compact('product', 'comboBox'));
     }

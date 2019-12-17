@@ -1,8 +1,12 @@
 @extends('layouts.admin')
 
 @section('content')
-   @php /** @var \App\Models\PriceCategoryModel $category*/ @endphp
    @php
+      /** @var \App\Models\PriceCategoryModel $category*/
+      /** @var \Illuminate\Database\Eloquent\Collection $comboBox */
+   @endphp
+   @php
+      $comboBox_final = $comboBox;
       $category_final = $category;
    @endphp
    <div class="site-section">
@@ -40,26 +44,25 @@
                      </div>
                   </div>
 
-                   {{-- <div class="row">
-                     --}}{{--<div class="col">
+                  <div class="row">
+                     <div class="col">
                         <label class="mr-sm-2" for="SelectParentTitle">Родитель</label>
-                        <select name="parent" class="custom-select mr-sm-2" id="SelectParentTitle">
+                        <select class="custom-select mr-sm-2" name="parent_id" id="SelectParentTitle">
+                           @foreach($comboBox_final as $item)
+                              <option value="{{$item->id}}">{{$item->title}}</option>
+                           @endforeach
+                        </select>
+                     </div>
+                     {{--<div class="col">
+                        <label class="mr-sm-2" for="SelectImageTitle">Изображение</label>
+                        <select class="custom-select mr-sm-2" id="SelectImageTitle">
                            <option selected>Выбор</option>
                            <option value="1">One</option>
                            <option value="2">Two</option>
                            <option value="3">Three</option>
                         </select>
-                     </div>--}}{{--
-                    --}}{{-- <div class="col">
-                        <label class="mr-sm-2" for="SelectImageTitle">Изображение</label>
-                        <select name="image" class="custom-select mr-sm-2" id="SelectImageTitle">
-                           <option selected>Выбор</option>
-                           <option value="1">1</option>
-                           <option value="2">2</option>
-                           <option value="3">3</option>
-                        </select>
-                     </div>--}}{{--
-                  </div>--}}
+                     </div>--}}
+                  </div>
 
                   {{--<div class="row form-group">
                      <div class="col-md-12">

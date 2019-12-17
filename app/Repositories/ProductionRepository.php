@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\PriceProductModel as Model ;
 use Illuminate\Pagination\LengthAwarePaginator;
+use App\Models\PriceCategoryModel;
 
 class ProductionRepository extends BaseRepository
 {
@@ -19,7 +20,7 @@ class ProductionRepository extends BaseRepository
      *
      * @return LengthAwarePaginator
      */
-    public function getAllWithPaginate($count_in_page = null)
+    public function getAllWithPaginate($count_in_page = 5)
     {
        $result = $this->startCondition()
            ->select('id','title', 'category_id', 'is_added', 'created_at')
@@ -37,5 +38,17 @@ class ProductionRepository extends BaseRepository
         $result = $this->startCondition()->find($id);
 
         return $result;
+    }
+
+    public function getForCombobox()
+    {
+        $Model = new PriceCategoryModel();
+        $combobox = $Model
+            ->select('id','title')
+            ->where('id', '>', '1')
+            ->get();
+        unset($Model);
+
+        return $combobox;
     }
 }

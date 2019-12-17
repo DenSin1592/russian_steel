@@ -43,15 +43,17 @@ class CategoryRepository extends BaseRepository
     {
         return $this->startCondition()
             ->select('id','title')
-            ->where('id', '>', '1')     // для views категорий первый параметр
-            ->get();                    //<option value="1">Выбор категории</option>
+            ->get();
     }
 
-    public function getAllWithPaginate($count_in_page = null)
+    public function getAllWithPaginate($count_in_page = 5)
     {
         return $this->startCondition()
-            ->select('id','title')
+            ->select('id', 'title', 'parent_id')
             ->where('id', '>', '1')
+            ->with(['parent' => function($query){
+                $query->select('id', 'title');
+            }])
             ->paginate($count_in_page);
     }
 }
