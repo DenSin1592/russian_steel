@@ -1,6 +1,10 @@
 @extends('layouts.admin')
 
 @section('content')
+   @php
+      /** @var \Illuminate\Database\Eloquent\Collection $comboBox*/
+      $comboBox_final = $comboBox;
+   @endphp
    <div class="site-section">
 
       <div class="container">
@@ -11,6 +15,12 @@
             <div class="col-md-7 text-center">
                <p>Создание новой единицы товара</p>
             </div>
+            @php /** @var \Illuminate\Support\ViewErrorBag $errors*/ @endphp
+            @if($errors->any())
+               <div class="bg-danger col-md-7 text-center">
+                  <p>{{$errors->first()}}</p>
+               </div>
+            @endif
          </div>
 
       </div>
@@ -18,33 +28,25 @@
       <div class="container">
          <div class="row">
             <div class="col-md-12 col-lg-8 mb-5">
-               <form action="#" class="p-5 bg-white">
-
+               <form action="{{route('admin/productions.store')}}" method="post"  class="p-5 bg-white">
+                  @csrf
                   <div class="row form-group">
                      <div class="col-md-12 mb-3 mb-md-0">
-                        <label class="font-weight-bold" for="fullname">Имя</label>
-                        <input type="text" id="fullname" class="form-control" >
+                        <label class="font-weight-bold" for="fullname">Название</label>
+                        <input type="text" id="fullname" value="{{old('title')}}" name="title" class="form-control" >
                      </div>
                   </div>
-                  <div class="row form-group">
-                     <div class="col-md-12 mb-3 mb-md-0">
-                        <label class="font-weight-bold" for="fullname" hidden>slug</label>
-                        <input type="text" id="fullname" name="slug" class="form-control" hidden >
-                     </div>
-                  </div>
-
 
                   <div class="row">
                      <div class="col">
                         <label class="mr-sm-2" for="SelectParentTitle">Категория</label>
-                        <select class="custom-select mr-sm-2" id="SelectParentTitle">
-                           <option selected>Выбор</option>
-                           <option value="1">One</option>
-                           <option value="2">Two</option>
-                           <option value="3">Three</option>
+                        <select class="custom-select mr-sm-2" name="category_id" id="SelectParentTitle">
+                           @foreach($comboBox_final as $item)
+                           <option value="{{$item->id}}">{{$item->title}}</option>
+                           @endforeach
                         </select>
                      </div>
-                     <div class="col">
+                     {{--<div class="col">
                         <label class="mr-sm-2" for="SelectImageTitle">Изображение</label>
                         <select class="custom-select mr-sm-2" id="SelectImageTitle">
                            <option selected>Выбор</option>
@@ -52,37 +54,31 @@
                            <option value="2">Two</option>
                            <option value="3">Three</option>
                         </select>
-                     </div>
+                     </div>--}}
                   </div>
-                  {{--<div class="row form-group">
-                     <div class="col-md-12">
-                        <label class="font-weight-bold" for="email">Email</label>
-                        <input type="email" id="email" class="form-control" placeholder="Email Address">
-                     </div>
-                  </div>--}}
                   <br/>
                   <div class="form-check form-check-inline">
-                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                     <input class="form-check-input" type="radio" name="is_added" id="inlineRadio1" value="1">
                      <label class="form-check-label" for="inlineRadio1">Опубликованно</label>
                   </div>
                   <br/>
                   <div class="form-check form-check-inline">
-                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                     <label class="form-check-label" for="inlineRadio2">Неопубликованно</label>
+                     <input class="form-check-input" type="radio" checked  name="is_added" id="inlineRadio2" value="0">
+                     <label class="form-check-label" for="inlineRadio2"  >Неопубликованно</label>
                   </div>
                   <br/>
 
                   <div class="row form-group">
                      <div class="col-sm-3 my-1">
                         <label class="font-weight-bold" for="price">Цена</label>
-                        <input type="text" id="price" class="form-control" placeholder="Price">
+                        <input type="text" id="price" name="price" value="{{old('price')}}" class="form-control" placeholder="Price">
                      </div>
                   </div>
 
                   <div class="row form-group">
                      <div class="col-md-12">
                         <label class="font-weight-bold" for="message">Описание</label>
-                        <textarea name="message" id="message" cols="30" rows="5" class="form-control"></textarea>
+                        <textarea name="content_row" id="message"  cols="30" rows="5" class="form-control">{{old('title')}}</textarea>
                      </div>
                   </div>
 

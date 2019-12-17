@@ -20,8 +20,6 @@ Route::group(['namespace' => "Site"], function (){
     /*Route::get('/news', 'PageController@show_news_page')->name('site/news');*/
 });
 
-Auth::routes(App\Http\Controllers\Auth\CheckRegisterController::close_register());
-
 Route::get('auth/home', 'Auth\HomeController@index')->name('auth/home');
 
 Route::group(['prefix' => 'admin', 'namespace' => "AdminPanel"] , function(){
@@ -29,5 +27,7 @@ Route::group(['prefix' => 'admin', 'namespace' => "AdminPanel"] , function(){
     Route::resource('categories', 'CategoryController')->except(['show','destroy'])->names('admin/categories');
     Route::resource('productions', 'ProductionController')->except('show')->names('admin/productions');
 });
+
+Auth::routes(App\Http\Controllers\Auth\CheckRegisterController::close_register());
 
 Route::fallback('Site\PageController@show_home_page');

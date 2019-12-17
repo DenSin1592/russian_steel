@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminPanel\CreateProductRequest;
 use App\Http\Requests\AdminPanel\UpdateProductRequest;
 use App\Models\PriceProductModel;
 use App\Repositories\CategoryRepository;
@@ -40,19 +41,30 @@ class ProductionController extends BaseController
      */
     public function create()
     {
-
-        return view('admin_panel.admin_production_create');
+        $comboBox = $this->CategoryRepository->getForCombobox();
+        return view('admin_panel.admin_production_create', compact('comboBox'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\AdminPanel\CreateProductRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateProductRequest $request)
     {
-        //
+        $model = new PriceProductModel();
+        $new_data = $request->all();
+        $result = $model::create($new_data);
+
+        if(!$result)
+            return back()
+                ->withInput()
+                ->withErrors(['message' => "Операция не удалась"]);
+        else
+            return redirect()
+                ->route('admin/productions.index')
+                ->with(['success' => 'Успешно сохранено']);
     }
 
     /**
