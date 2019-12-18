@@ -4,8 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+
+/*use Illuminate\Database\Eloquent\SoftDeletes;*/
+
 class PriceCategoryModel extends Model
 {
+    //use SoftDeletes;
+
     protected $table = 'pricelist_categories';
     /*protected $fillable = [
         'id',

@@ -125,5 +125,25 @@
          </div>
       </div>
 
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12 col-lg-8 mb-5">
+               <div class="p-4 mb-3 bg-white">
+                  <h3 class="h5 text-black mb-3">Удаление категории</h3>
+                  <p>Обратите внимание, что при удалении категории все дочернии категории будут прикрелены к корневой категории.</p>
+                  <p>Обратите внимание, что при удалении категории все продукты данной категории станут "неопубликованными". Так же при публикации данных продуктов необходимо будет выбрать новую категориюю.</p>
+                  <form method="post" action="{{route("admin/categories.destroy", $category->id)}}">
+                     @method("DELETE")
+                     @csrf
+                     <div class="row form-group">
+                        <div class="col-md-12">
+                           <input type="submit" value="Удалить" class="btn btn-primary">
+                        </div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
    </div>
 @endsection

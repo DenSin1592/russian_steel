@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Models\PriceCategoryModel;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class CategoryObserver
@@ -49,6 +50,18 @@ class CategoryObserver
     }
 
     /**
+     * Handle the price category model "deleting" event.
+     *
+     * @param  \App\Models\PriceCategoryModel  $PriceCategoryModel
+     * @return void
+     */
+    public function deleting(PriceCategoryModel $PriceCategoryModel)
+    {
+        $this->ChangedParentCategory($PriceCategoryModel);
+        $this->ChangedCategoryIdProduct($PriceCategoryModel);
+    }
+
+    /**
      * Handle the price category model "deleted" event.
      *
      * @param  \App\Models\PriceCategoryModel  $PriceCategoryModel
@@ -56,7 +69,7 @@ class CategoryObserver
      */
     public function deleted(PriceCategoryModel $PriceCategoryModel)
     {
-        //
+       // dd(__METHOD__);
     }
 
     /**
@@ -67,7 +80,7 @@ class CategoryObserver
      */
     public function restored(PriceCategoryModel $PriceCategoryModel)
     {
-        //
+        //dd(__METHOD__);
     }
 
     /**
@@ -78,12 +91,32 @@ class CategoryObserver
      */
     public function forceDeleted(PriceCategoryModel $PriceCategoryModel)
     {
-        //
+        //dd(__METHOD__);
     }
 
     private function setSlug($model)
     {
         if($model->isDirty('title'))
                 $model->slug = Str::slug($model->title);
+    }
+
+    private function ChangedParentCategory($PriceCategoryModel)
+    {
+        /*dd(DB::table('pricelist_categories')
+            ->select('parent_id')
+            ->where('parent_id', '=', $PriceCategoryModel->id)
+            ->get());*/
+        DB::table('pricelist_categories')
+            ->select('parent_id')
+            ->where('parent_id', '=',$PriceCategoryModel->id )
+            ->update(array('parent_id' => 1));
+    }
+
+    private function ChangedCategoryIdProduct($PriceCategoryModel)
+    {
+        DB::table('pricelist_products')
+            ->select('category_id', 'is_added')
+            ->where('category_id', '=',$PriceCategoryModel->id )
+            ->update(array('category_id' => 1, 'is_added' => 0));
     }
 }

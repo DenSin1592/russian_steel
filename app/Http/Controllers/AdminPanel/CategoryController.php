@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\AdminPanel;
 
-use App\Http\Controllers\Controller;
+
 use App\Http\Requests\AdminPanel\CreateCategoryRequest;
 use App\Http\Requests\AdminPanel\UpdateCategoryRequest;
 use App\Models\PriceCategoryModel;
-use Illuminate\Http\Request;
 use App\Repositories\CategoryRepository;
 
 class CategoryController extends BaseController
@@ -73,10 +72,10 @@ class CategoryController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    /*public function show($id)
     {
         //
-    }
+    }*/
 
     /**
      * Show the form for editing the specified resource.
@@ -131,6 +130,16 @@ class CategoryController extends BaseController
      */
     public function destroy($id)
     {
-        dd(__METHOD__);
+        $product = $this->CategoryRepository->getOneById($id);
+        $result = $product->forceDelete();
+
+        if(!$result)
+            return back()
+                ->withInput()
+                ->withErrors(['message' => "Удаление не удалось"]);
+        else
+            return redirect()
+                ->route('admin/categories.index')
+                ->with(['success' => 'Успешно удалено']);
     }
 }

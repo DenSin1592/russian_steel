@@ -50,17 +50,6 @@
 
                   <td>
                      <a href="{{route('admin/categories.edit', $category->id)}}"><button type="button" class="btn btn-warning">Изменить</button></a>
-                     <br/>
-                     <form method="post" action="{{route("admin/categories.destroy", $category->id)}}">
-                        @method("DELETE")
-                        @csrf
-                        <div class="row form-group">
-                           <div class="col-md-12">
-                              <input type="submit" value="Удалить" class="btn btn-primary">
-                           </div>
-                        </div>
-
-                     </form>
                   </td>
                </tr>
             @endforeach
