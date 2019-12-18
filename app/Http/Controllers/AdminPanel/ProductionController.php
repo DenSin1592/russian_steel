@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\AdminPanel;
 
-use App\Http\Controllers\Controller;
+
 use App\Http\Requests\AdminPanel\CreateProductRequest;
 use App\Http\Requests\AdminPanel\UpdateProductRequest;
 use App\Models\PriceProductModel;
-use App\Repositories\CategoryRepository;
 use App\Repositories\ProductionRepository;
-use Illuminate\Http\Request;
+
 
 class ProductionController extends BaseController
 {
@@ -129,7 +128,7 @@ class ProductionController extends BaseController
      */
     public function destroy($id)
     {
-        $product = $this->ProductionRepository->getOneById($id);
+        $product = new PriceProductModel();
         $result = $product::destroy($id);
 
         if(!$result)

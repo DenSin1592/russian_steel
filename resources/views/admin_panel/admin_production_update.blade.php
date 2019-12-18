@@ -103,7 +103,7 @@
 
                   <div class="row form-group">
                      <div class="col-md-12">
-                        <label class="font-weight-bold" for="category_id">Описание</label>
+                        <label class="font-weight-bold" for="message">Описание</label>
                         <textarea name="content_row" id="message" cols="30" rows="5" class="form-control">{{old('content_row', $product_final->content_row)}}</textarea>
                      </div>
                   </div>
@@ -144,6 +144,23 @@
             </div>
          </div>
       </div>
-
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12 col-lg-8 mb-5">
+               <div class="p-4 mb-3 bg-white">
+                  <h3 class="h5 text-black mb-3">Удаление продукта</h3>
+                  <form method="post" action="{{route("admin/productions.destroy", $product->id)}}">
+                     @method("DELETE")
+                     @csrf
+                     <div class="row form-group">
+                        <div class="col-md-12">
+                           <input type="submit" value="Удалить" class="btn btn-primary">
+                        </div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
    </div>
 @endsection

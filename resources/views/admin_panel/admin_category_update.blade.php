@@ -84,7 +84,7 @@
                   <div class="row form-group">
                      <div class="col-md-12">
                         <label class="font-weight-bold" for="message">Описание</label>
-                        <textarea name="description" name="message" id="message" cols="30" rows="5" class="form-control" placeholder="Say hello to us">{{old('description',$category_final->description)}}</textarea>
+                        <textarea name="description" id="message" cols="30" rows="5" class="form-control" >{{old('description',$category_final->description)}}</textarea>
                      </div>
                   </div>
 
