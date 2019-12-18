@@ -23,7 +23,7 @@ class ProductionRepository extends BaseRepository
     public function getAllWithPaginate($count_in_page = 5)
     {
        $result = $this->startCondition()
-           ->select('id','title', 'category_id', 'is_added', 'created_at')
+           ->select('id','title', 'category_id', 'is_added', 'created_at', 'added_at')
            ->orderBy('id', 'DESC')
            ->with(['category' => function($query){
                $query->select('id', 'title');

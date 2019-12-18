@@ -63,7 +63,7 @@
                      <td>{{$product->id}}</td>
                      <td>{{$product->category->title}}</td>
                      <td class="text-danger">Не Опубликована</td>
-                     <td> </td>
+                     <td>{{$product->added_at}}</td>
                      <td>
                         <a href="{{route("admin/productions.edit", $product->id)}}"><button type="button" class="btn btn-warning">Изменить</button></a>
                      </td>
