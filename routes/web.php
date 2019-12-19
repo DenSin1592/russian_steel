@@ -26,6 +26,7 @@ Route::group(['prefix' => 'admin', 'namespace' => "AdminPanel"] , function(){
     Route::get('/home', 'HomeController@index')->name('admin/home');
     Route::resource('categories', 'CategoryController')->except('show')->names('admin/categories');
     Route::resource('productions', 'ProductionController')->except('show')->names('admin/productions');
+    Route::resource('images', 'ImageController')->except('show')->names('admin/images');
 });
 
 Auth::routes(App\Http\Controllers\Auth\CheckRegisterController::close_register());
