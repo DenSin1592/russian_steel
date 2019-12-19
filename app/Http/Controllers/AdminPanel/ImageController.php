@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
+use App\Models\PriceImageModel;
 use Illuminate\Http\Request;
 
 class ImageController extends Controller
@@ -14,7 +15,8 @@ class ImageController extends Controller
      */
     public function index()
     {
-        //
+        $images_paginate = PriceImageModel::select('id', 'title', 'img')->paginate(10);
+        return view('admin_panel.admin_images', compact('images_paginate'));
     }
 
     /**

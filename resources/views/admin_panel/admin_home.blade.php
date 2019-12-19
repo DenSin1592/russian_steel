@@ -57,7 +57,7 @@
                             <div class="p-4">
                                 <h2 class="h5 mb-3 text-black line-height-sm">Изображения</h2>
                                 <p>В данном разделе осуществляется работа с <strong>Изображениями</strong>.</p>
-                                <p class="mb-0"><a href="#" class=""><small class="text-uppercase font-weight-bold text-black">Перейти</small></a></p>
+                                <p class="mb-0"><a href="{{route('admin/images.index')}}" class=""><small class="text-uppercase font-weight-bold text-black">Перейти</small></a></p>
                             </div>
                         </div>
                     </div>

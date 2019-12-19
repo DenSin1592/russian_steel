@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PriceImageModel extends Model
 {
-    protected $table = "'pricelist_images'";
+    protected $table = 'pricelist_images';
     protected $fillable = [
         'title',
         'img',
