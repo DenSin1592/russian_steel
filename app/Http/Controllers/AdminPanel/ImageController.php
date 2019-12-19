@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\AdminPanel;
 
-use App\Http\Controllers\Controller;
+use App\Http\Requests\AdminPanel\CreateImageRequest;
 use App\Models\PriceImageModel;
-use Illuminate\Http\Request;
 
-class ImageController extends Controller
+class ImageController extends BaseController
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +18,7 @@ class ImageController extends Controller
      */
     public function index()
     {
-        $images_paginate = PriceImageModel::select('id', 'title', 'img')->paginate(10);
+        $images_paginate = PriceImageModel::select('id', 'title', 'path')->paginate(10);
         return view('admin_panel.admin_images', compact('images_paginate'));
     }
 
@@ -26,18 +29,32 @@ class ImageController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin_panel.admin_image_create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\AdminPanel\CreateImageRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateImageRequest $request)
     {
-        //
+        $path = $request->file('image')->store('upload_image','public');
+        if(!$path) return back()->withErrors(['message' => "Неизвестная ошибка - попробуйте позже"])->withInput();
+
+        $model = new PriceImageModel();
+        $new_model['title'] = $request->input('title');
+        $new_model['path'] = $path;
+        $result = $model::create($new_model);
+        if(!$result)
+            return back()
+                ->withInput()
+                ->withErrors(['message' => "Операция не удалась"]);
+        else
+            return redirect()
+                ->route('admin/images.index')
+                ->with(['success' => 'Успешно сохранено']);
     }
 
     /**
@@ -65,11 +82,11 @@ class ImageController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\AdminPanel\CreateImageRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateImageRequest $request, $id)
     {
         //
     }

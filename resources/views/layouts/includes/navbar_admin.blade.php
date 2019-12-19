@@ -47,7 +47,7 @@
                                     <li><a href={{route('admin/home')}}>Home</a></li>
                                     <li><a href={{route('admin/categories.index')}}>Категории</a></li>
                                     <li><a href={{route('admin/productions.index')}}>Продукты</a></li>
-                                    <li><a href="#">Изображения</a></li>
+                                    <li><a href="{{route('admin/images.index')}}">Изображения</a></li>
                                     <li><a href={{route('auth/home')}}>Log In</a></li>
                                 </ul>
                             </div>

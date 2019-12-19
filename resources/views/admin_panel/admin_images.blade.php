@@ -22,7 +22,7 @@
                </div>
             @endif
             <div class="col-md-7 text-right">
-               <a href=""><button type="button" class="btn btn-danger">Добавить</button></a>
+               <a href="{{route('admin/images.create')}}"><button type="button" class="btn btn-danger">Добавить</button></a>
             </div>
          </div>
 
@@ -46,7 +46,7 @@
                      <th scope="row">{{$count}}</th>
                      <td>{{$image->title}}</td>
                      <td>{{$image->id}}</td>
-                     <td><img alt="{{$image->title}}" src="{{ asset('upload/'.$image->img) }}"></td>
+                     <td><img style="width: 70px; height: 70px;" alt="{{$image->title}}" src="/storage/{{$image->path}}"></td>
                      <td>
                         <a href=""><button type="button" class="btn btn-warning">Изменить</button></a>
                      </td>
