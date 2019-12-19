@@ -8,12 +8,12 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Models\User;
+
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
 $factory->define(\App\Models\PriceProductModel::class, function (Faker $faker) {
-    $title_num = rand(1,10000);
+    $title_num = rand(1,1000000);
     $text_size = rand(100, 1000);
     $title ='Изделие № ' . $title_num;
     $text = $faker->text($text_size);
@@ -23,7 +23,7 @@ $factory->define(\App\Models\PriceProductModel::class, function (Faker $faker) {
     $created_at = $faker->dateTimeBetween("- 60 days", "-2 days");
 
     return [
-        'category_id' => rand(2,6),
+        'category_id' => rand(2,9),
         //'image_id' => ((rand(1,4) > 1 )? 1 : 2),
         'title' => $title,
         'slug' => Str::slug($title),
