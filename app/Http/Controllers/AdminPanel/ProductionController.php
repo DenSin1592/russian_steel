@@ -40,8 +40,9 @@ class ProductionController extends BaseController
      */
     public function create()
     {
-        $comboBox = $this->ProductionRepository->getForCombobox();
-        return view('admin_panel.admin_production_create', compact('comboBox'));
+        $comboBoxImage = $this->ProductionRepository->getForComboboxImage();
+        $comboBoxCategory = $this->ProductionRepository->getForComboboxCategory();
+        return view('admin_panel.admin_production_create', compact('comboBoxCategory', 'comboBoxImage'));
     }
 
     /**
@@ -87,9 +88,10 @@ class ProductionController extends BaseController
     {
         $product = $this->ProductionRepository->getOneById($id);
         if(!$product) abort(404);
-        $comboBox = $this->ProductionRepository->getForCombobox();
+        $comboBoxImage = $this->ProductionRepository->getForComboboxImage();
+        $comboBoxCategory = $this->ProductionRepository->getForComboboxCategory();
 
-        return view('admin_panel.admin_production_update', compact('product', 'comboBox'));
+        return view('admin_panel.admin_production_update', compact('product', 'comboBoxCategory', 'comboBoxImage'));
     }
 
     /**

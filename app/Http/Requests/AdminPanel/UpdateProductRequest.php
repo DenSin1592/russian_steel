@@ -31,6 +31,7 @@ class UpdateProductRequest extends FormRequest
             'id' => ['integer','required'],
             'title' => ['string','required','min:5','max:50', 'unique:pricelist_products,title,'. $this->id],
             'category_id' => 'integer|required|exists:pricelist_categories,id',
+            'image_id' => 'integer|required|exists:pricelist_images,id',
             'is_added' => 'bool|nullable',
             'price' => 'numeric|required',
             'content_row' => 'string|min:10|max:10000'

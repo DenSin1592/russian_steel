@@ -15,8 +15,8 @@ class CreatePricelistProductsTable extends Migration
     {
         Schema::create('pricelist_products', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('category_id')->unsigned();
-            $table->unsignedBigInteger('image_id')->unsigned()->default(1);
+            $table->unsignedBigInteger('category_id')->unsigned()->default(1);
+            $table->unsignedBigInteger('image_id')->unsigned()->nullable()->default(1);
             $table->string('title',100)->unique();
             $table->string('slug',100)->unique();
             $table->float('price',12,2);

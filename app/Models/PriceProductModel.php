@@ -20,5 +20,10 @@ class PriceProductModel extends Model
         return $this->belongsTo(PriceCategoryModel::class);
     }
 
+    public function image()
+    {
+        return $this->belongsTo(PriceImageModel::class);
+    }
+
 }
 

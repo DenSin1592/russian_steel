@@ -2,8 +2,10 @@
 
 @section('content')
    @php
-      /** @var \Illuminate\Database\Eloquent\Collection $comboBox*/
-      $comboBox_final = $comboBox;
+      /** @var \Illuminate\Database\Eloquent\Collection $comboBoxCategory*/
+      /** @var \Illuminate\Database\Eloquent\Collection $comboBoxImage*/
+      $comboBoxCategory_final = $comboBoxCategory;
+      $comboBoxImage_final = $comboBoxImage;
    @endphp
    <div class="site-section">
 
@@ -39,22 +41,21 @@
 
                   <div class="row">
                      <div class="col">
-                        <label class="mr-sm-2" for="SelectParentTitle">Категория</label>
-                        <select class="custom-select mr-sm-2" name="category_id" id="SelectParentTitle">
-                           @foreach($comboBox_final as $item)
+                        <label class="mr-sm-2" for="SelectCategoryTitle">Категория</label>
+                        <select class="custom-select mr-sm-2" name="category_id" id="SelectCategoryTitle">
+                           @foreach($comboBoxCategory_final as $item)
                            <option value="{{$item->id}}">{{$item->title}}</option>
                            @endforeach
                         </select>
                      </div>
-                     {{--<div class="col">
+                     <div class="col">
                         <label class="mr-sm-2" for="SelectImageTitle">Изображение</label>
-                        <select class="custom-select mr-sm-2" id="SelectImageTitle">
-                           <option selected>Выбор</option>
-                           <option value="1">One</option>
-                           <option value="2">Two</option>
-                           <option value="3">Three</option>
+                        <select class="custom-select mr-sm-2" name="image_id" id="SelectImageTitle">
+                           @foreach($comboBoxImage_final as $item)
+                              <option value="{{$item->id}}">{{$item->title}}</option>
+                           @endforeach
                         </select>
-                     </div>--}}
+                     </div>
                   </div>
                   <br/>
                   <div class="form-check form-check-inline">

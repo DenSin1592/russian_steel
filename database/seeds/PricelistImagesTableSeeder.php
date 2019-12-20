@@ -18,7 +18,6 @@ class PricelistImagesTableSeeder extends Seeder
             //$parent_id = ($i>4)? rand(1,4) : 1;
             $images[] = [
                 'title' => $image_title,
-                'img' => 1,
                 'path' => "/images/DB/"
             ];
         }
