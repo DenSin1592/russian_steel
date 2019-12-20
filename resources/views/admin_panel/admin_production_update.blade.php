@@ -3,11 +3,13 @@
 @section('content')
    @php
       /** @var App\Models\PriceProductModel $product */
-      /** @var \App\Models\PriceCategoryModel $comboBox*/
+      /** @var \Illuminate\Database\Eloquent\Collection $comboBoxCategory*/
+      /** @var \Illuminate\Database\Eloquent\Collection $comboBoxImage*/
    @endphp
    @php
       $product_final = $product;
-      $comboBox_final = $comboBox;
+      $comboBoxCategory_final = $comboBoxCategory;
+      $comboBoxImage_final = $comboBoxImage;
    @endphp
    <div class="site-section">
 
@@ -53,7 +55,7 @@
                      <div class="col">
                         <label class="font-weight-bold" for="SelectParentTitle">Категория</label>
                         <select class="custom-select mr-sm-2" name="category_id" id="SelectParentTitle">
-                           @foreach($comboBox_final as $category)
+                           @foreach($comboBoxCategory_final as $category)
                               <option value="{{$category->id}}"
                                       @if($product_final->category_id == $category->id) selected @endif
                               >
@@ -63,22 +65,15 @@
                            @endforeach
                         </select>
                      </div>
-                     {{--<div class="col">
+                     <div class="col">
                         <label class="mr-sm-2" for="SelectImageTitle">Изображение</label>
-                        <select class="custom-select mr-sm-2" id="SelectImageTitle">
-                           <option selected>Выбор</option>
-                           <option value="1">One</option>
-                           <option value="2">Two</option>
-                           <option value="3">Three</option>
+                        <select class="custom-select mr-sm-2" name="image_id" id="SelectImageTitle">
+                           @foreach($comboBoxImage_final as $item)
+                              <option value="{{$item->id}}">{{$item->title}}</option>
+                           @endforeach
                         </select>
-                     </div>--}}
-                  </div>
-                  {{--<div class="row form-group">
-                     <div class="col-md-12">
-                        <label class="font-weight-bold" for="email">Email</label>
-                        <input type="email" id="email" class="form-control" placeholder="Email Address">
                      </div>
-                  </div>--}}
+                  </div>
                   <br/>
                   <div class="form-check form-check-inline">
                      <input class="form-check-input" type="radio" name="is_added" id="inlineRadio1" value="1"

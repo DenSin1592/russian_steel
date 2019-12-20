@@ -32,6 +32,7 @@
                <th>#</th>
                <th>Имя</th>
                <th>Id</th>
+               <th>Изображение</th>
                <th>Категория</th>
                <th>Статус</th>
                <th>Дата публикации</th>
@@ -49,6 +50,7 @@
                   <th scope="row">{{$count}}</th>
                   <td>{{$product->title}}</td>
                   <td>{{$product->id}}</td>
+                  <td><img style="width: 70px; height: 70px;" alt="{{$product->image->title ?? 'Изображение удалено'}}" src="/storage/{{$product->image->path ?? ''}}"></td>
                   <td>{{$product->category->title}}</td>
                   <td>Опубликована</td>
                   <td>{{$product->added_at}}</td>

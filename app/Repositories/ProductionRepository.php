@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Models\PriceImageModel;
 use App\Models\PriceProductModel as Model ;
 use Illuminate\Pagination\LengthAwarePaginator;
 use App\Models\PriceCategoryModel;
@@ -23,11 +24,14 @@ class ProductionRepository extends BaseRepository
     public function getAllWithPaginate($count_in_page = 5)
     {
        $result = $this->startCondition()
-           ->select('id','title', 'category_id', 'is_added', 'created_at', 'added_at')
+           ->select('id','title', 'category_id', 'image_id', 'is_added', 'added_at')
            ->orderBy('id', 'DESC')
            ->with(['category' => function($query){
                $query->select('id', 'title');
-           }])
+           },
+               'image' => function($query){
+                   $query->select('id', 'title', 'path');
+               }])
            ->paginate($count_in_page);
 
         return $result;
@@ -40,12 +44,23 @@ class ProductionRepository extends BaseRepository
         return $result;
     }
 
-    public function getForCombobox()
+    public function getForComboboxCategory()
     {
         $Model = new PriceCategoryModel();
         $combobox = $Model
             ->select('id','title')
             ->where('id', '>', '1')
+            ->get();
+        unset($Model);
+
+        return $combobox;
+    }
+
+    public function getForComboboxImage()
+    {
+        $Model = new PriceImageModel();
+        $combobox = $Model
+            ->select('id','title')
             ->get();
         unset($Model);
 

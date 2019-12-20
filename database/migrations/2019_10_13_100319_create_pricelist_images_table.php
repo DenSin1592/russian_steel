@@ -15,7 +15,8 @@ class CreatePricelistImagesTable extends Migration
     {
         Schema::create('pricelist_images', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title')->unique();
+            $table->string('title');
+            //$table->string('img');
             $table->string('path');
             $table->timestamps();
 

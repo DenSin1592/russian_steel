@@ -23,13 +23,13 @@ class PricelistCategoryTableSeeder extends Seeder
             'description' => "Корневая категория"
         ];
 
-        for ($i = 1; $i < 6; $i++ ){
+        for ($i = 1; $i < 10; $i++ ){
             $cat_title = "Категория№".$i;
             //$parent_id = ($i>4)? rand(1,4) : 1;
             $categories[] = [
                 'title' => $cat_title,
                 'slug' => Str::slug($cat_title),
-                'parent_id' => 1,
+                'parent_id' => ($i<4) ? 1 : rand(2, 8),
                 'description' => ("description " . $i ."description " . $i ."description " . $i ."description " . $i)
             ];
         }

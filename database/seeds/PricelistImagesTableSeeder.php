@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Str;
+
 
 class PricelistImagesTableSeeder extends Seeder
 {
@@ -13,7 +13,7 @@ class PricelistImagesTableSeeder extends Seeder
     {
         $images = [];
 
-        for ($i = 1; $i < 100; $i++) {
+        for ($i = 1; $i < 2; $i++) {
             $image_title = "Image №" . $i;
             //$parent_id = ($i>4)? rand(1,4) : 1;
             $images[] = [
