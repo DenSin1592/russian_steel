@@ -99,6 +99,15 @@ class ImageController extends BaseController
      */
     public function destroy($id)
     {
-        //
+        $result= PriceImageModel::destroy($id);
+
+        if(!$result)
+            return back()
+                ->withInput()
+                ->withErrors(['message' => "Удаление не удалось"]);
+        else
+            return redirect()
+                ->route('admin/images.index')
+                ->with(['success' => 'Успешно удалено']);
     }
 }

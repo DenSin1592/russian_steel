@@ -48,7 +48,11 @@
                      <td>{{$image->id}}</td>
                      <td><img style="width: 70px; height: 70px;" alt="{{$image->title}}" src="/storage/{{$image->path}}"></td>
                      <td>
-                        <a href=""><button type="button" class="btn btn-warning">Изменить</button></a>
+                        <form method="post" action="{{route("admin/images.destroy", $image->id)}}">
+                              @method("DELETE")
+                              @csrf
+                              <input type="submit" value="Удалить" class="btn btn-primary">
+                           </form>
                      </td>
                   </tr>
             @endforeach
