@@ -6,7 +6,7 @@
 <ul>
     <li>Open_Server</li>
     <li>PHP_7.3-x64</li>
-    <li><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="50"></li>
+    <li><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="100"></li>
     <li>MySQL_8.0-x64</li>
 </ul>
 </p>
