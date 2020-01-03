@@ -1,8 +1,7 @@
 
 <p align="center"><h2>Russian_Steel.ru</h2></p>
-<p> Сайт разработан по заказу ООО"Фолбер Групп"</p>
-
-
+<p>Сайт разработан по заказу ООО"Фолбер Групп"</p>
+<p>Frontend: <i class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a></p>
 
 
 
