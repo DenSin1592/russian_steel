@@ -1,10 +1,14 @@
 
 <p align="center"><h2>Russian_Steel.ru</h2></p>
 <p>Сайт разработан по заказу ООО"Фолбер Групп"</p>
-<p>Frontend: <i class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a></p>
-
-
-
+<p>Frontend: Бесплатный шаблон <a href="https://colorlib.com" target="_blank" >Colorlib</a>. Переработан DenSin1592 под собственные нужды</p>
+<p>Backend:
+<ul>
+    <li>Open_Server</li>
+    <li>PHP_7.3-x64</li>
+    <li>MySQL_8.0-x64</li>
+</ul>
+</p>
 
 
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
