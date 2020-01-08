@@ -1,7 +1,7 @@
 
 <p align="center"><h2>Russian_Steel.ru</h2></p>
 <p>Заказчик: ООО"Фолбер Групп"</p>
-<p>На данный момент не утвержден.</p>
+<p>На данный момент не утвержден заказчиком.</p>
 <p>Frontend: Бесплатный шаблон <a href="https://colorlib.com" target="_blank" >Colorlib</a>. Переработан DenSin1592 под собственные нужды</p>
 <p>Backend:
 <ul>
