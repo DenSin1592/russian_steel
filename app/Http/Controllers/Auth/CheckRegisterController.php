@@ -18,7 +18,7 @@ class CheckRegisterController extends Controller
     |
     */
 
-    public static function close_register()
+    public static function closeRegister()
     {
         $user = User::first();
 

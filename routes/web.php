@@ -12,12 +12,12 @@
 */
 
 Route::group(['namespace' => "Site"], function (){
-    Route::get('/', 'PageController@show_home_page')->name('site/home');
-    Route::get('/services', 'PageController@show_services_page')->name('site/about');
-    Route::get('/contacts', 'PageController@show_contacts_page')->name('site/contacts');
-    Route::get('/production/{category_id?}', 'PageController@show_production_page')
+    Route::get('/', 'PageController@showHomePage')->name('site/home');
+    Route::get('/services', 'PageController@showServicesPage')->name('site/about');
+    Route::get('/contacts', 'PageController@showContactsPage')->name('site/contacts');
+    Route::get('/production/{category_id?}', 'PageController@showProductionPage')
         ->name('site/production')->where('category_id', '[0-9]+');
-    /*Route::get('/news', 'PageController@show_news_page')->name('site/news');*/
+    /*Route::get('/news', 'PageController@showNewsPage')->name('site/news');*/
 });
 
 Route::get('auth/home', 'Auth\HomeController@index')->name('auth/home');
@@ -29,6 +29,6 @@ Route::group(['prefix' => 'admin', 'namespace' => "AdminPanel"] , function(){
     Route::resource('images', 'ImageController')->except('show')->names('admin/images');
 });
 
-Auth::routes(App\Http\Controllers\Auth\CheckRegisterController::close_register());
+Auth::routes(App\Http\Controllers\Auth\CheckRegisterController::closeRegister());
 
 Route::fallback('Site\PageController@show_home_page');

@@ -5,10 +5,7 @@
         /** @var \App\Models\PriceCategoryModel $products */
         /**  @var (string || \App\Models\PriceCategoryModel) $header*/
     @endphp
-  @php
-    $products_final = $products;
-    $header_final = $header;
-  @endphp
+
   <div class="slide-one-item home-slider owl-carousel">
 
     <div class="site-blocks-cover overlay" style="background-image: url(/images/hero_bg_300.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
@@ -77,11 +74,11 @@
     <div class="container">
       <div class="row mb-5 justify-content-center">
         <div class="col-12 text-center">
-          <h2 class="font-weight-light text-black display-4">{{$header_final}}</h2>
+          <h2 class="font-weight-light text-black display-4">{{$header}}</h2>
         </div>
       </div>
       <div class="row no-gutters align-items-stretch h-100">
-        @foreach($products_final as $product_final)
+        @foreach($products as $product)
           <?php
               static $count = 0;
               $count++;
@@ -93,9 +90,9 @@
               <div class="col-md-6 bg-image bg-sm-height" style="background-image: url('/images/img_4_colored.jpg');" data-aos="fade" data-aos-delay="0"></div>
               <div class="col-md-6 bg-light text">
                 <div class="p-4">
-                <h2 class="h5 mb-3 text-black line-height-sm">{{$product_final->title}}</h2>
-                  <p>{{$product_final->excerpt}}...</p>
-                  <p class="mb-0"><a  class=""><small class="text-uppercase font-weight-bold text-black">{{$product_final->price}}р.</small></a></p>
+                <h2 class="h5 mb-3 text-black line-height-sm">{{$product->title}}</h2>
+                  <p>{{$product->excerpt}}...</p>
+                  <p class="mb-0"><a  class=""><small class="text-uppercase font-weight-bold text-black">{{$product->price}}р.</small></a></p>
                 </div>
               </div>
             </div>
@@ -106,9 +103,9 @@
                 <div class="col-md-6 bg-image order-md-1 order-lg-2 bg-sm-height" style="background-image: url('/images/img_2_colored.jpg');" data-aos="fade" data-aos-delay="300"></div>
                 <div class="col-md-6 bg-light text order-md-2 order-lg-1">
                   <div class="p-4">
-                    <h2 class="h5 mb-3 text-black line-height-sm">{{$product_final->title}}</h2>
-                    <p>{{$product_final->excerpt}}...</p>
-                    <p class="mb-0"><a  class=""><small class="text-uppercase font-weight-bold text-black">{{$product_final->price}}р.</small></a></p>
+                    <h2 class="h5 mb-3 text-black line-height-sm">{{$product->title}}</h2>
+                    <p>{{$product->excerpt}}...</p>
+                    <p class="mb-0"><a  class=""><small class="text-uppercase font-weight-bold text-black">{{$product->price}}р.</small></a></p>
                   </div>
                 </div>
               </div>
@@ -124,7 +121,7 @@
   <div class="row">
     <div class="col-md-12 text-center">
       <div class="site-block-27">
-          <?php echo $products_final->render(); ?>
+          <?php echo $products->render(); ?>
       </div>
     </div>
   </div>
