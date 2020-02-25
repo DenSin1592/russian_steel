@@ -1,11 +1,9 @@
 
 <p><h2>Russian_Steel</h2></p>
 <p>Заказчик: ООО"Фолбер Групп"</p>
-<p>На данный момент не утвержден заказчиком.</p>
 <p>Frontend: Бесплатный шаблон <a href="https://colorlib.com" target="_blank" >Colorlib</a>. Переработан DenSin1592 под собственные нужды</p>
 <p>Backend:</p>
 <ul>
-    <li>Open_Server</li>
     <li>PHP_7.3-x64</li>
     <li><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="100"></li>
     <li>MySQL_8.0-x64</li>
